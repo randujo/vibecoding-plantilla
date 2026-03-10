@@ -47,10 +47,10 @@ export default function Pricing() {
     <section id="pricing" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">
             Precios simples y transparentes
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
             Elige el plan que mejor se adapte a tus necesidades. Sin costos
             ocultos.
           </p>
@@ -61,20 +61,20 @@ export default function Pricing() {
               key={index}
               className={`rounded-2xl p-8 border ${
                 plan.highlighted
-                  ? "border-indigo-600 bg-indigo-600 text-white shadow-xl scale-105"
-                  : "border-gray-200 bg-white"
+                  ? "border-amber-600 bg-amber-600 text-white shadow-xl scale-105"
+                  : "border-stone-200 bg-white"
               }`}
             >
               <h3
                 className={`text-lg font-semibold mb-1 ${
-                  plan.highlighted ? "text-indigo-100" : "text-gray-900"
+                  plan.highlighted ? "text-amber-100" : "text-stone-900"
                 }`}
               >
                 {plan.name}
               </h3>
               <p
                 className={`text-sm mb-6 ${
-                  plan.highlighted ? "text-indigo-200" : "text-gray-500"
+                  plan.highlighted ? "text-amber-200" : "text-stone-500"
                 }`}
               >
                 {plan.description}
@@ -83,7 +83,7 @@ export default function Pricing() {
                 <span className="text-4xl font-bold">{plan.price}</span>
                 <span
                   className={`text-sm ${
-                    plan.highlighted ? "text-indigo-200" : "text-gray-500"
+                    plan.highlighted ? "text-amber-200" : "text-stone-500"
                   }`}
                 >
                   {plan.period}
@@ -94,7 +94,7 @@ export default function Pricing() {
                   <li key={i} className="flex items-center gap-3 text-sm">
                     <svg
                       className={`w-5 h-5 shrink-0 ${
-                        plan.highlighted ? "text-indigo-200" : "text-indigo-600"
+                        plan.highlighted ? "text-amber-200" : "text-amber-600"
                       }`}
                       fill="none"
                       viewBox="0 0 24 24"
@@ -115,8 +115,8 @@ export default function Pricing() {
                 href="#contact"
                 className={`block w-full py-3 text-center rounded-full font-medium transition-colors ${
                   plan.highlighted
-                    ? "bg-white text-indigo-600 hover:bg-indigo-50"
-                    : "bg-indigo-600 text-white hover:bg-indigo-700"
+                    ? "bg-white text-amber-600 hover:bg-amber-50"
+                    : "bg-amber-600 text-white hover:bg-amber-700"
                 }`}
               >
                 {plan.cta}

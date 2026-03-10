@@ -24,7 +24,7 @@ export async function POST(request) {
           <h2>Hola ${name},</h2>
           <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
           <p style="color: #666;">Tu mensaje:</p>
-          <blockquote style="border-left: 3px solid #4f46e5; padding-left: 16px; color: #444;">
+          <blockquote style="border-left: 3px solid #b45309; padding-left: 16px; color: #444;">
             ${message}
           </blockquote>
           <p style="color: #999; font-size: 14px; margin-top: 32px;">

@@ -33,13 +33,13 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-6 bg-gray-50">
+    <section id="features" className="py-20 px-6 bg-stone-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-stone-900 mb-4">
             Todo lo que necesitas
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
             Herramientas y funcionalidades listas para que tu solo te preocupes
             por tu contenido.
           </p>
@@ -48,15 +48,15 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow"
+              className="bg-white p-8 rounded-2xl border border-stone-100 hover:shadow-lg transition-shadow"
             >
-              <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-5">
+              <div className="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center mb-5">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-stone-900 mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-stone-600 leading-relaxed">
                 {feature.description}
               </p>
             </div>
