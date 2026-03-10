@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { resend } from "@/libs/resend";
+import { getResend } from "@/libs/resend";
 import { addRowToSheet } from "@/libs/google-sheets";
 
 export async function POST(request) {
@@ -15,7 +15,7 @@ export async function POST(request) {
 
     await addRowToSheet({ name, email, message });
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev",
       to: email,
       subject: "Recibimos tu mensaje",
