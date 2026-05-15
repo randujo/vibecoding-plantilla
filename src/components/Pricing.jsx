@@ -1,16 +1,17 @@
+import PaymentButton from "@/components/PaymentButton";
 import { siteConfig } from "@/config/site";
 
 export default function Pricing() {
   const { heading, subheading, plans } = siteConfig.pricing;
 
   return (
-    <section id="pricing" className="py-20 px-6">
+    <section id="pricing" className="py-20 px-6 bg-[color:var(--color-surface)]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="title-main-duotone text-3xl md:text-4xl font-bold tracking-tight mb-4">
             {heading}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[color:var(--color-text-muted)] max-w-3xl mx-auto">
             {subheading}
           </p>
         </div>
@@ -20,20 +21,20 @@ export default function Pricing() {
               key={index}
               className={`rounded-2xl p-8 border ${
                 plan.highlighted
-                  ? "border-indigo-600 bg-indigo-600 text-white shadow-xl scale-105"
-                  : "border-gray-200 bg-white"
+                  ? "border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white shadow-xl scale-105"
+                  : "border-[color:var(--color-surface-strong)] bg-[color:var(--color-bg)] shadow-sm"
               }`}
             >
               <h3
                 className={`text-lg font-semibold mb-1 ${
-                  plan.highlighted ? "text-indigo-100" : "text-gray-900"
+                  plan.highlighted ? "text-slate-100" : "text-[color:var(--color-text)]"
                 }`}
               >
                 {plan.name}
               </h3>
               <p
                 className={`text-sm mb-6 ${
-                  plan.highlighted ? "text-indigo-200" : "text-gray-500"
+                  plan.highlighted ? "text-slate-300" : "text-[color:var(--color-text-muted)]"
                 }`}
               >
                 {plan.description}
@@ -42,7 +43,7 @@ export default function Pricing() {
                 <span className="text-4xl font-bold">{plan.price}</span>
                 <span
                   className={`text-sm ${
-                    plan.highlighted ? "text-indigo-200" : "text-gray-500"
+                    plan.highlighted ? "text-slate-300" : "text-[color:var(--color-text-muted)]"
                   }`}
                 >
                   {plan.period}
@@ -53,7 +54,7 @@ export default function Pricing() {
                   <li key={i} className="flex items-center gap-3 text-sm">
                     <svg
                       className={`w-5 h-5 shrink-0 ${
-                        plan.highlighted ? "text-indigo-200" : "text-indigo-600"
+                        plan.highlighted ? "text-slate-300" : "text-[color:var(--color-accent)]"
                       }`}
                       fill="none"
                       viewBox="0 0 24 24"
@@ -74,14 +75,17 @@ export default function Pricing() {
                 href="#contact"
                 className={`block w-full py-3 text-center rounded-full font-medium transition-colors ${
                   plan.highlighted
-                    ? "bg-white text-indigo-600 hover:bg-indigo-50"
-                    : "bg-indigo-600 text-white hover:bg-indigo-700"
+                    ? "bg-white text-[color:var(--color-primary)] hover:bg-slate-100"
+                    : "bg-[color:var(--color-primary)] text-white hover:bg-[color:var(--color-primary-soft)]"
                 }`}
               >
                 {plan.cta}
               </a>
             </div>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <PaymentButton />
         </div>
       </div>
     </section>

@@ -10,7 +10,8 @@
  * Para activarlo:
  *   1. Edita src/config/site.js
  *   2. Cambia payment.enabled a true
- *   3. Escribe tu usuario de PayPal.me en payment.paypalMeUsername
+ *   3. Pon payment.paypalMeUrl con tu enlace (ej. https://paypal.me/Arditec)
+ *      o rellena payment.paypalMeUsername si prefieres que se arme la URL
  */
 
 import { siteConfig } from "@/config/site";
@@ -31,28 +32,35 @@ function PayPalIcon() {
 
 // ─── Componente principal ─────────────────────────────────────────────────────
 export default function PaymentButton({ amount, className = "" }) {
-  const { enabled, paypalMeUsername, defaultAmount, currency, buttonText } =
+  const { enabled, paypalMeUsername, paypalMeUrl, defaultAmount, currency, buttonText } =
     siteConfig.payment;
 
-  // Si el pago no esta habilitado o falta el usuario, no mostrar nada
-  if (!enabled || !paypalMeUsername) return null;
+  // Si el pago no esta habilitado o falta destino, no mostrar nada
+  if (!enabled) return null;
 
   const finalAmount = amount ?? defaultAmount;
 
-  // Construir la URL de PayPal.me
-  // Con monto:    https://www.paypal.me/usuario/29USD
-  // Sin monto:   https://www.paypal.me/usuario  (el comprador elige cuanto pagar)
+  const baseUrl = (paypalMeUrl && String(paypalMeUrl).trim()) || "";
+  const hasBase = Boolean(baseUrl);
+  const hasUsername = Boolean(paypalMeUsername && String(paypalMeUsername).trim());
+  if (!hasBase && !hasUsername) return null;
+
+  const base =
+    hasBase && baseUrl
+      ? baseUrl.replace(/\/+$/, "")
+      : `https://paypal.me/${encodeURIComponent(String(paypalMeUsername).trim())}`;
+
+  // Con monto: https://paypal.me/usuario/29USD — Sin monto: solo la URL base
   const paypalUrl =
-    finalAmount > 0
-      ? `https://www.paypal.me/${paypalMeUsername}/${finalAmount}${currency}`
-      : `https://www.paypal.me/${paypalMeUsername}`;
+    finalAmount > 0 ? `${base}/${finalAmount}${currency}` : base;
 
   return (
     <a
       href={paypalUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-[#0070BA] hover:bg-[#005ea6] active:bg-[#004f96] text-white font-medium rounded-full transition-colors ${className}`}
+      className={`inline-flex cursor-pointer items-center justify-center gap-2.5 px-6 py-3 bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-soft)] active:bg-[color:var(--color-accent)] text-white font-semibold rounded-full transition-colors shadow-md shadow-slate-300/40 ${className}`}
+      aria-label={`${buttonText} — abre PayPal en una pestaña nueva`}
     >
       <PayPalIcon />
       {buttonText}

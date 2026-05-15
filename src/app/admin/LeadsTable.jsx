@@ -136,6 +136,9 @@ export default function LeadsTable({ leads, error }) {
                           Telefono
                         </th>
                         <th className="text-left px-5 py-3.5 font-medium text-gray-600">
+                          Tipo de servicio
+                        </th>
+                        <th className="text-left px-5 py-3.5 font-medium text-gray-600">
                           Mensaje
                         </th>
                       </tr>
@@ -162,6 +165,11 @@ export default function LeadsTable({ leads, error }) {
                           </td>
                           <td className="px-5 py-4 text-gray-600">
                             {lead.telefono || (
+                              <span className="text-gray-300">—</span>
+                            )}
+                          </td>
+                          <td className="px-5 py-4 text-gray-600">
+                            {lead.tipoServicio || (
                               <span className="text-gray-300">—</span>
                             )}
                           </td>

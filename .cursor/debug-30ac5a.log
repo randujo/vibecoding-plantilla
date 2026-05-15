@@ -1,0 +1,2 @@
+{"sessionId":"30ac5a","runId":"pre-fix-3","hypothesisId":"H9-dns","location":"curl -I registry","message":"DNS resolution timeout persists","data":{"exitCode":28,"error":"Resolving timed out after 10005 ms"},"timestamp":1776995528382}
+{"sessionId":"30ac5a","runId":"pre-fix-3","hypothesisId":"H10-npm-waits-network","location":"npm ping","message":"npm ping stuck at PING notice without response","data":{"npmVersion":"11.11.0"},"timestamp":1776995528457}

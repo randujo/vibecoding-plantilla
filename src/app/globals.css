@@ -3,3 +3,80 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
 }
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f1f5f9;
+  --color-surface-strong: #e2e8f0;
+  --color-text: #1f2937;
+  --color-text-muted: #475569;
+  --color-primary: #0f2747;
+  --color-primary-soft: #1e3a5f;
+  --color-accent: #2d5b88;
+  /* Titulos estilo ARDITEC (base + steel). */
+  --title-foreground: #10131a;
+  --steel-start: #2b4b82;
+  --steel-end: #3b82f6;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Gradiente "steel" para texto resaltado. */
+.text-gradient-steel {
+  background-image: linear-gradient(90deg, var(--steel-start) 0%, var(--steel-end) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Titulos principales con base oscura + remate steel (como referencia). */
+.title-main-duotone {
+  background-image: linear-gradient(
+    90deg,
+    var(--title-foreground) 0%,
+    var(--title-foreground) 52%,
+    var(--steel-start) 53%,
+    var(--steel-start) 82%,
+    var(--steel-end) 86%,
+    var(--steel-end) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Galería (/galería): títulos de técnica y subgrupos */
+.gallery-section-title {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  background-image: linear-gradient(
+    125deg,
+    var(--color-primary) 0%,
+    var(--steel-start) 38%,
+    #2563eb 72%,
+    var(--steel-end) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gallery-group-title {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background-image: linear-gradient(
+    92deg,
+    var(--steel-start) 0%,
+    var(--color-accent) 42%,
+    #3b82f6 78%,
+    #93c5fd 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

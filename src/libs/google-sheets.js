@@ -19,21 +19,24 @@ export async function getLeads() {
     fecha: row.get("Fecha") || "",
     nombre: row.get("Nombre") || "",
     email: row.get("Email") || "",
-    telefono: row.get("Telefono") || "",
+    telefono: row.get("Teléfono") || row.get("Telefono") || "",
+    tipoServicio: row.get("Tipo de servicio") || "",
     mensaje: row.get("Mensaje") || "",
   }));
 }
 
-export async function addRowToSheet({ name, email, phone, message }) {
+export async function addRowToSheet({ name, email, phone, service, message }) {
   const auth = getAuth();
   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID, auth);
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[0];
+  // Las claves deben coincidir exactamente con la fila 1 de la hoja (incl. acentos).
   await sheet.addRow({
     Fecha: new Date().toLocaleString("es-MX"),
     Nombre: name,
     Email: email,
-    Telefono: phone || "",
+    Teléfono: phone || "",
+    "Tipo de servicio": service || "",
     Mensaje: message,
   });
 }

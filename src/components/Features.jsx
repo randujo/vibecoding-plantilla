@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 
 const iconMap = {
@@ -19,38 +22,135 @@ const iconMap = {
 };
 
 export default function Features() {
-  const { heading, subheading, items } = siteConfig.features;
+  const { heading, subheading, items, galleryLinkLabel } = siteConfig.features;
+  const [zoom, setZoom] = useState(null);
+
+  useEffect(() => {
+    if (zoom) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+    return undefined;
+  }, [zoom]);
+
+  useEffect(() => {
+    if (!zoom) return undefined;
+    const onEscape = (e) => {
+      if (e.key === "Escape") setZoom(null);
+    };
+    window.addEventListener("keydown", onEscape);
+    return () => window.removeEventListener("keydown", onEscape);
+  }, [zoom]);
 
   return (
-    <section id="features" className="py-20 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {heading}
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {subheading}
-          </p>
+    <>
+      <section id="features" className="py-20 px-6 bg-[color:var(--color-bg)]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="title-main-duotone text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              {heading}
+            </h2>
+            <p className="text-lg text-[color:var(--color-text-muted)] max-w-3xl mx-auto">
+              {subheading}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {items.map((feature, index) => {
+              const imgAlt = `Técnica: ${feature.title}`;
+              return (
+                <div
+                  key={feature.title ?? index}
+                  className="bg-[color:var(--color-bg)] p-8 rounded-2xl border border-[color:var(--color-surface-strong)] shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                >
+                  {feature.image ? (
+                    <div className="mb-5 overflow-hidden rounded-xl border border-[color:var(--color-surface-strong)] bg-[color:var(--color-surface)]">
+                      <button
+                        type="button"
+                        onClick={() => setZoom({ src: feature.image, alt: imgAlt })}
+                        className="group block w-full overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2"
+                        aria-label={`Ver imagen grande: ${feature.title}`}
+                      >
+                        <img
+                          src={feature.image}
+                          alt={imgAlt}
+                          className="w-full h-auto object-cover aspect-[4/3] transition duration-300 group-hover:scale-[1.02]"
+                        />
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 bg-[color:var(--color-surface)] text-[color:var(--color-accent)] rounded-xl flex items-center justify-center mb-5">
+                      {iconMap[feature.icon] ?? iconMap.settings}
+                    </div>
+                  )}
+                  <h3 className="text-xl font-semibold text-[color:var(--color-text)] mb-3">
+                    {feature.title}
+                  </h3>
+                  {"descriptionBlocks" in feature && feature.descriptionBlocks ? (
+                    <div className="space-y-3 text-[color:var(--color-text-muted)] leading-relaxed">
+                      {feature.descriptionBlocks.map((block, i) => (
+                        <p key={i}>
+                          <span className="font-semibold text-[color:var(--color-text)]">
+                            {block.label}
+                          </span>{" "}
+                          {block.text}
+                        </p>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-[color:var(--color-text-muted)] leading-relaxed">{feature.description}</p>
+                  )}
+                  {feature.gallerySectionId && galleryLinkLabel ? (
+                    <p className="mt-6">
+                      <a
+                        href={`/galeria#${feature.gallerySectionId}`}
+                        className="text-sm font-semibold text-[color:var(--color-accent)] underline decoration-2 underline-offset-4 transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2"
+                        aria-label={`${galleryLinkLabel}: ${feature.title}`}
+                      >
+                        {galleryLinkLabel}
+                      </a>
+                    </p>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {items.map((feature, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-lg transition-shadow"
-            >
-              <div className="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center mb-5">
-                {iconMap[feature.icon] ?? iconMap.settings}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
+      </section>
+
+      {zoom ? (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={zoom.alt || "Imagen ampliada"}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-8"
+          onClick={() => setZoom(null)}
+        >
+          <div
+            role="presentation"
+            className="flex max-h-full w-full max-w-[min(100vw-2rem,1200px)] flex-col items-stretch gap-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex shrink-0 justify-end">
+              <button
+                type="button"
+                onClick={() => setZoom(null)}
+                className="rounded-full bg-white px-4 py-2 text-sm font-bold text-[color:var(--color-text)] shadow-lg transition hover:bg-[#eef4fb] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                aria-label="Cerrar"
+              >
+                Cerrar
+              </button>
             </div>
-          ))}
+            <img
+              src={zoom.src}
+              alt={zoom.alt}
+              className="max-h-[min(82vh,calc(100vh-9rem))] w-full rounded-xl object-contain object-center shadow-2xl"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      ) : null}
+    </>
   );
 }
