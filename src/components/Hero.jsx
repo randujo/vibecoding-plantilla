@@ -6,12 +6,12 @@ export default function Hero() {
   return (
     <section id="hero" className="pt-32 pb-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-indigo-700 bg-indigo-50 rounded-full">
+        <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-sky-600 bg-sky-50 rounded-full">
           {badge}
         </span>
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
           {title}
-          <span className="text-indigo-600"> {titleHighlight}</span>
+          <span className="text-sky-500"> {titleHighlight}</span>
         </h1>
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
           {subtitle}

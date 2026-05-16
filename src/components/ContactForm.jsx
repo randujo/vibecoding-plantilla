@@ -118,7 +118,7 @@ export default function ContactForm() {
               value={form.name}
               onChange={handleChange}
               placeholder={formConfig.namePlaceholder}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition ${
+              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent transition ${
                 errors.name ? "border-red-400 bg-red-50" : "border-gray-300"
               }`}
             />
@@ -139,7 +139,7 @@ export default function ContactForm() {
               value={form.email}
               onChange={handleChange}
               placeholder={formConfig.emailPlaceholder}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition ${
+              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent transition ${
                 errors.email ? "border-red-400 bg-red-50" : "border-gray-300"
               }`}
             />
@@ -163,7 +163,7 @@ export default function ContactForm() {
               value={form.phone}
               onChange={handleChange}
               placeholder={formConfig.phonePlaceholder}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition ${
+              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent transition ${
                 errors.phone ? "border-red-400 bg-red-50" : "border-gray-300"
               }`}
             />
@@ -184,7 +184,7 @@ export default function ContactForm() {
               value={form.message}
               onChange={handleChange}
               placeholder={formConfig.messagePlaceholder}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition resize-none ${
+              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 focus:border-transparent transition resize-none ${
                 errors.message ? "border-red-400 bg-red-50" : "border-gray-300"
               }`}
             />

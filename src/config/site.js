@@ -224,7 +224,8 @@ export const siteConfig = {
   colors: {
     primary: "black",         // Color principal (botones, acentos)
     secondary: "gray-900",    // Color de textos principales
-    accent: "indigo-50",      // Fondos suaves y badges
+    accent: "sky-50",         // Fondos suaves y badges
+    accentText: "sky-500",    // Textos de acento (titulos, enlaces, iconos)
     background: "white",      // Fondo general
   },
 
