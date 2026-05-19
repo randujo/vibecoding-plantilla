@@ -79,6 +79,45 @@ export const siteConfig = {
   },
 
   // ─────────────────────────────────────────────
+  // PAGINA /preguntas-frecuentes
+  // ─────────────────────────────────────────────
+  preguntasFrecuentesPage: {
+    metadata: {
+      title: "Preguntas frecuentes | ARDITEC",
+      description:
+        "Formatos de archivo para tus diseños (.pdf, .ai, .cdr, .png, .dxf, .dwg) y ayuda para crear o definir tu idea.",
+    },
+    eyebrow: "Diseño y archivos",
+    heading: "Preguntas frecuentes",
+    subheading: "Resolvemos tus dudas antes de cotizar",
+    logo: "/Imagenes/ARDITEC%20logo%20principal.jpeg",
+    ctaLabel: "Cuéntanos tu idea",
+    ctaHref: "/#contact",
+    items: [
+      {
+        question: "¿En qué formato debo enviar mis diseños?",
+        answer:
+          "Los formatos pueden ser: .pdf, .ai, .cdr, .png, .dxf, .dwg.",
+      },
+      {
+        question: "¿Si no tengo un diseño, me pueden ayudar a diseñarlo?",
+        answer:
+          "Sí, claro: nos das la idea de lo que quieres y lo diseñamos.",
+      },
+      {
+        question: "¿Me pueden ayudar con ideas? No tengo claro lo que quiero",
+        answer:
+          "Claro que sí: mándanos mensaje y te ayudamos a definir qué es lo que quieres.",
+      },
+      {
+        question: "¿Puedo ver cómo quedó el diseño antes de que se realice el trabajo?",
+        answer:
+          "Claro que sí: dentro de nuestro proceso hacemos el diseño y te lo enviamos para que lo revises a detalle y, ya cuando lo autorices, es cuando procedemos a realizar el trabajo.",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
   // GALERIA /galeria — trabajos por técnica (edita listas de imágenes aquí)
   // ─────────────────────────────────────────────
   gallery: {
@@ -326,10 +365,6 @@ export const siteConfig = {
           },
           { src: "/Imagenes/Vinil%20Rosario.jpg", alt: "Vinil de corte aplicado en playeras (Rosario)" },
           { src: "/Imagenes/Vinil%20vasos.jpg", alt: "Vinil de corte aplicado en vasos (vasos personalizados)" },
-          {
-            src: "/Imagenes/Mochila%20con%20fondo.jpeg",
-            alt: "Mochila personalizada con vinil de corte (con fondo)",
-          },
         ],
       },
       {
@@ -342,6 +377,10 @@ export const siteConfig = {
           { src: "/Imagenes/playera.png", alt: "Playera con diseño en vinil textil" },
           { src: "/Imagenes/Botas%20vinil.jpg", alt: "Botas personalizadas con vinil textil" },
           { src: "/Imagenes/Emi%20vinil%20textil.jpg", alt: "Diseño personalizado en vinil textil (Emi)" },
+          {
+            src: "/Imagenes/Mochila%20con%20fondo.jpeg",
+            alt: "Mochila personalizada con vinil textil",
+          },
         ],
       },
       {
@@ -800,6 +839,25 @@ export const siteConfig = {
         href: "/quienes-somos",
         keywords: ["quienes", "somos", "empresa", "arditec", "nosotros", "historia"],
       },
+      {
+        label: "Preguntas frecuentes",
+        href: "/preguntas-frecuentes",
+        keywords: [
+          "preguntas",
+          "frecuentes",
+          "formato",
+          "diseño",
+          "diseno",
+          "pdf",
+          "ai",
+          "cdr",
+          "png",
+          "dxf",
+          "dwg",
+          "archivo",
+          "ideas",
+        ],
+      },
     ],
   },
 
@@ -1150,6 +1208,7 @@ export const siteConfig = {
         links: [
           { label: "Aviso de privacidad", href: "/aviso-de-privacidad" },
           { label: "Código de ética", href: "/codigo-de-etica" },
+          { label: "Preguntas frecuentes", href: "/preguntas-frecuentes" },
         ],
       },
       {
