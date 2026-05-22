@@ -214,6 +214,10 @@ export const siteConfig = {
           {
             title: "Reconocimientos",
             images: [
+              {
+                src: "/Imagenes/Reconocimiento.jpeg",
+                alt: "Reconocimiento en acrílico con corte láser en forma de auto clásico, grabado «Best Classic Winner» y base de madera",
+              },
               { src: "/Imagenes/reconocimiento%20redondo.png", alt: "Reconocimiento circular en acrílico grabado" },
               { src: "/Imagenes/reconocimientose.jpg", alt: "Placa o reconocimiento con grabado institucional" },
               { src: "/Imagenes/reconocimvis.jpg", alt: "Galardón en acrílico con texto grabado" },
@@ -289,6 +293,10 @@ export const siteConfig = {
           {
             title: "Letreros",
             images: [
+              {
+                src: "/Imagenes/Letrero.jpeg",
+                alt: "Letrero de bienvenida para boda en acrílico negro con nombres en relieve dorado cortado a láser",
+              },
               {
                 src: "/Imagenes/Letrero%20Gaby.jpeg",
                 alt: "Letrero de bienvenida en acrílico oro con tipografía y monograma para evento",
@@ -640,32 +648,86 @@ export const siteConfig = {
     metadata: {
       title: "Catálogos | ARDITEC",
       description:
-        "Explora los catálogos de ARDITEC: cajas de sobres, letreros, tarjetas metálicas, termos personalizados y más.",
+        "Explora los catálogos de ARDITEC: termos, plumas, tarjetas metálicas, cajas acrílico, welcome sign y más.",
     },
     badge: "Catálogos",
     heading: "Explora nuestros catálogos",
-    /** Texto debajo del título en /catalogos (vista ampliada al hacer clic en la foto). */
-    thumbnailHint: "Pulsa cada imagen para verla en grande.",
+    /** Texto debajo del título en /catalogos (vista ampliada al hacer clic). */
+    thumbnailHint: "Pulsa cada imagen o catálogo PDF para verlo en grande.",
     items: [
-      {
-        id: "cajas-sobres",
-        title: "Cajas de sobres",
-        image: "/Imagenes/Cajas%20de%20sobres.jpeg",
-      },
-      {
-        id: "letreros",
-        title: "Letreros de bienvenida",
-        image: "/Imagenes/Letreros.jpeg",
-      },
-      {
-        id: "tarjetas-metalicas",
-        title: "Tarjetas metálicas",
-        image: "/Imagenes/Tarjetas%20met%C3%A1lica.jpeg",
-      },
       {
         id: "termos",
         title: "Termos personalizados",
-        image: "/Imagenes/Termos.jpeg",
+        image: "/Imagenes/CAT%20Termos.jpeg",
+      },
+      {
+        id: "plumas",
+        title: "Plumas ARDITEC",
+        image: "/Imagenes/CAT%20Plumas.png",
+        pdf: "/Imagenes/CAT%20ARDI%20PLUMAS.pdf",
+      },
+      {
+        id: "libretas-agendas-carpetas",
+        title: "Libretas, agendas y carpetas",
+        image: "/Imagenes/CAT%20Agendas.png",
+        pdf: "/Imagenes/CAT%20libretas%2C%20agendas%20y%20carpetas.pdf",
+      },
+      {
+        id: "vinos",
+        title: "Vinos",
+        image: "/Imagenes/CAT%20Agendas.png",
+        pdf: "/Imagenes/CAT%20vinos.pdf",
+      },
+      {
+        id: "catalogo-general",
+        title: "Catálogo general",
+        image: "/Imagenes/CAT%20Agendas.png",
+        pdf: "/Imagenes/catalogo.pdf",
+      },
+      {
+        id: "cajas-acrilico",
+        title: "Cajas acrílico",
+        image: "/Imagenes/CAJAS_ACRILICO_pagina1.png",
+      },
+      {
+        id: "detalles-sociales",
+        title: "Detalles sociales 2025",
+        image: "/Imagenes/DETALLES_SOCIALES_25_pagina1.png",
+      },
+      {
+        id: "welcome-sign",
+        title: "Welcome sign",
+        image: "/Imagenes/WELCOME_SIGN_pagina1.png",
+        pdf: "/Imagenes/WELCOME%20SIGN.pdf",
+      },
+    ],
+    /** Subsecciones con varias imágenes bajo un mismo título. */
+    groups: [
+      {
+        id: "tarjetas-metalicas",
+        title: "Tarjetas Metálicas",
+        items: [
+          {
+            id: "tarjetas-1",
+            title: "Dual Sim y acabados",
+            image: "/Imagenes/Tarjetas%201.jpeg",
+          },
+          {
+            id: "tarjetas-2",
+            title: "Acabados cepillado y espejo",
+            image: "/Imagenes/Tarjetas%202.jpeg",
+          },
+          {
+            id: "tarjetas-3",
+            title: "Diseños populares",
+            image: "/Imagenes/Tarjetas%203.jpeg",
+          },
+          {
+            id: "tarjetas-4",
+            title: "Diseños logotipos",
+            image: "/Imagenes/Tarjetas%204.jpeg",
+          },
+        ],
       },
     ],
   },
