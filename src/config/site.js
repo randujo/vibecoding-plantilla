@@ -35,13 +35,11 @@ export const siteConfig = {
   },
 
   // ─────────────────────────────────────────────
-  // CINTA DE ACCIONES (fin de casi cada pagina: cotizar, hablar, volver)
+  // CINTA DE ACCIONES (fin de casi cada pagina: cotizar, volver)
   // ─────────────────────────────────────────────
   pageCtaBar: {
     cotizaLabel: "Cotiza tu proyecto",
     cotizaHref: "/#contact",
-    hablemosLabel: "Hablemos de tu proyecto",
-    hablemosHref: "/#contact",
     homeLabel: "Volver al inicio",
     homeHref: "/",
   },
