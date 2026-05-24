@@ -1366,9 +1366,9 @@ export const siteConfig = {
         title: "NAVEGACIÓN.",
         links: [
           { label: "Inicio", href: "/#hero" },
-          { label: "Servicios", href: "/#features" },
-          { label: "Ver nuestro trabajo", href: "/galeria" },
+          { label: "Productos por técnica", href: "/#features" },
           { label: "Nuestras líneas de producto", href: "/#pricing" },
+          { label: "Ver nuestro trabajo", href: "/galeria" },
           { label: "Catálogos", href: "/catalogos" },
           { label: "Contacto", href: "/#contact" },
         ],
