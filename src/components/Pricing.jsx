@@ -6,7 +6,7 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="py-20 px-6 bg-[color:var(--color-surface)]">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="title-main-duotone text-3xl md:text-4xl font-bold tracking-tight mb-4">
             {heading}
@@ -15,13 +15,13 @@ export default function Pricing() {
             {subheading}
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 items-start">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`rounded-2xl p-8 border ${
+              className={`flex h-full flex-col rounded-2xl p-8 border ${
                 plan.highlighted
-                  ? "border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white shadow-xl scale-105"
+                  ? "border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white shadow-xl"
                   : "border-[color:var(--color-surface-strong)] bg-[color:var(--color-bg)] shadow-sm"
               }`}
             >
@@ -49,7 +49,7 @@ export default function Pricing() {
                   {plan.period}
                 </span>
               </div>
-              <ul className="space-y-3 mb-8">
+              <ul className="mb-8 flex-1 space-y-3">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm">
                     <svg
@@ -72,8 +72,8 @@ export default function Pricing() {
                 ))}
               </ul>
               <a
-                href="#contact"
-                className={`block w-full py-3 text-center rounded-full font-medium transition-colors ${
+                href={plan.ctaHref ?? "#contact"}
+                className={`mt-auto block w-full py-3 text-center rounded-full font-medium transition-colors ${
                   plan.highlighted
                     ? "bg-white text-[color:var(--color-primary)] hover:bg-slate-100"
                     : "bg-[color:var(--color-primary)] text-white hover:bg-[color:var(--color-primary-soft)]"

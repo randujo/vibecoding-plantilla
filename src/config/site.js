@@ -591,9 +591,9 @@ export const siteConfig = {
   // PRECIOS (planes de pago)
   // ─────────────────────────────────────────────
   pricing: {
-    heading: "Nuestros servicios por producto",
+    heading: "Nuestras líneas de producto",
     subheading:
-      "Agrupamos por tipo de producto para que elegir sea tan simple como escoger una carpeta bien etiquetada.",
+      "Elige la categoría que más se parece a tu proyecto y explora ejemplos reales.",
     plans: [
       {
         name: "Línea Promocional",
@@ -606,7 +606,8 @@ export const siteConfig = {
           "Imanes promocionales",
           "Tazas para marca o evento",
         ],
-        cta: "Quiero este servicio",
+        cta: "Ver imágenes",
+        ctaHref: "/imagenes/linea-promocional",
         highlighted: false,
       },
       {
@@ -618,9 +619,9 @@ export const siteConfig = {
           "Letreros de acrílico",
           "Rotulado de ventanas",
           "Rotulado de vehículos",
-          "Lonas y stickers",
         ],
-        cta: "Cotizar línea comercial",
+        cta: "Ver imágenes",
+        ctaHref: "/imagenes/linea-comercial",
         highlighted: true,
       },
       {
@@ -630,12 +631,103 @@ export const siteConfig = {
         description: "Para equipos y eventos",
         features: [
           "Vinil textil",
-          "DTF para volumen",
+          "DTF",
           "Maletas y textiles",
-          "Aplicaciones especiales en foil",
+          "Sudaderas",
         ],
-        cta: "Cotizar línea textil",
+        cta: "Ver imágenes",
+        ctaHref: "/imagenes/linea-textil",
         highlighted: false,
+      },
+      {
+        name: "Eventos sociales",
+        price: "Detalles",
+        period: " personalizados",
+        description: "Para bodas, cumpleaños y celebraciones",
+        features: [
+          "Cajas de acrílico",
+          "Reconocimientos",
+          "Cake topper",
+          "Letreros",
+          "Vasos",
+        ],
+        cta: "Ver imágenes",
+        ctaHref: "/imagenes/eventos-sociales",
+        highlighted: true,
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────
+  // IMAGENES POR LINEA DE PRODUCTO (/imagenes/[linea])
+  // Referencia subgrupos o secciones de gallery.sections (sin duplicar rutas).
+  // picks: { sectionId, groupTitle? } | { sectionId, displayTitle? } sección completa
+  //        | { sectionId, displayTitle, imageSrcs[] } imágenes concretas de una sección plana
+  // ─────────────────────────────────────────────
+  productLines: {
+    metadata: {
+      titleSuffix: "Imágenes | ARDITEC",
+      description:
+        "Ejemplos reales de productos personalizados ARDITEC, organizados por línea de producto.",
+    },
+    galleryLinkLabel: "Ver galería completa por técnica",
+    galleryHref: "/galeria",
+    backToLinesLabel: "Volver a líneas de producto",
+    backToLinesHref: "/#pricing",
+    emptyMessage: "Pronto añadiremos más ejemplos en esta línea.",
+    lines: [
+      {
+        id: "linea-promocional",
+        name: "Línea Promocional",
+        description: "Termos, plumas, llaveros y tazas para regalo corporativo o promocional.",
+        picks: [
+          { sectionId: "galeria-grabado-laser", groupTitle: "Termos" },
+          { sectionId: "galeria-grabado-laser", groupTitle: "Plumas" },
+          { sectionId: "galeria-grabado-laser", groupTitle: "Llaveros" },
+          { sectionId: "galeria-sublimado", displayTitle: "Tazas para marca o evento" },
+        ],
+      },
+      {
+        id: "linea-comercial",
+        name: "Línea Comercial",
+        description: "Letreros, rotulado de ventanas y señalética para dar visibilidad a tu negocio.",
+        picks: [
+          { sectionId: "galeria-grabado-laser", groupTitle: "Letreros" },
+          {
+            sectionId: "galeria-vinil-corte",
+            displayTitle: "Rotulado comercial",
+            imageSrcs: [
+              "/Imagenes/GQ.png",
+              "/Imagenes/B%26BW.jpeg",
+              "/Imagenes/imperio7.png",
+            ],
+          },
+        ],
+      },
+      {
+        id: "linea-textil",
+        name: "Línea Textil",
+        description: "Playeras, uniformes, maletas y sudaderas con vinil textil y DTF.",
+        picks: [
+          { sectionId: "galeria-vinil-textil", displayTitle: "Vinil textil y maletas" },
+          { sectionId: "galeria-dtf", displayTitle: "DTF" },
+        ],
+      },
+      {
+        id: "eventos-sociales",
+        name: "Eventos sociales",
+        description: "Detalles personalizados para bodas, cumpleaños y celebraciones.",
+        picks: [
+          { sectionId: "galeria-grabado-laser", groupTitle: "Cajas de acrílico" },
+          { sectionId: "galeria-grabado-laser", groupTitle: "Reconocimientos" },
+          { sectionId: "galeria-grabado-laser", groupTitle: "Cake topper" },
+          { sectionId: "galeria-grabado-laser", groupTitle: "Letreros" },
+          {
+            sectionId: "galeria-vinil-corte",
+            displayTitle: "Vasos",
+            imageSrcs: ["/Imagenes/Vasos%20Gaby.jpeg", "/Imagenes/Vinil%20vasos.jpg"],
+          },
+        ],
       },
     ],
   },
@@ -892,8 +984,24 @@ export const siteConfig = {
         ],
       },
       { label: "Línea Promocional", href: "/#pricing", keywords: ["termos", "plumas", "llaveros", "imanes", "tazas"] },
-      { label: "Línea Comercial", href: "/#pricing", keywords: ["rotulado", "ventanas", "vehículos", "vehiculos", "lonas", "stickers", "letreros"] },
-      { label: "Línea Textil", href: "/#pricing", keywords: ["playeras", "uniformes", "textil", "dtf"] },
+      { label: "Línea Comercial", href: "/#pricing", keywords: ["rotulado", "ventanas", "vehículos", "vehiculos", "letreros"] },
+      { label: "Línea Textil", href: "/#pricing", keywords: ["playeras", "uniformes", "textil", "dtf", "sudaderas"] },
+      {
+        label: "Eventos sociales",
+        href: "/#pricing",
+        keywords: [
+          "eventos",
+          "bodas",
+          "cumpleaños",
+          "cumpleanos",
+          "cajas acrílico",
+          "cajas acrilico",
+          "reconocimientos",
+          "cake topper",
+          "letreros",
+          "vasos",
+        ],
+      },
       { label: "Contacto", href: "/#contact", keywords: ["cotización", "cotizacion", "contacto", "mensaje", "asesoría", "asesoria"] },
       { label: "Nuestro valor agregado", href: "/por-que-arditec", keywords: ["valor", "faq", "preguntas", "tiempos", "empresas", "gobierno"] },
       {
@@ -1335,7 +1443,7 @@ export const siteConfig = {
   // ─────────────────────────────────────────────
   payment: {
     // Cambia enabled a true cuando tengas tu cuenta de PayPal lista
-    enabled: true,
+    enabled: false,
     // Enlace completo al que lleva el botón (clic = abrir PayPal.me)
     paypalMeUrl: "https://paypal.me/Arditec",
     // Tu nombre de usuario de PayPal.me (solo se usa si paypalMeUrl está vacío)
