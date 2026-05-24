@@ -37,10 +37,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# PDFs demasiado grandes para GitHub (>100 MB); se quedan solo en tu computadora
-public/Imagenes/CAJAS ACRILICO.pdf
-public/Imagenes/DETALLES SOCIALES 25.pdf
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts

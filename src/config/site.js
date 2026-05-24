@@ -746,9 +746,28 @@ export const siteConfig = {
     thumbnailHint: "Pulsa cada imagen o catálogo PDF para verlo en grande.",
     items: [
       {
-        id: "termos",
-        title: "Termos personalizados",
-        image: "/Imagenes/CAT%20Termos.jpeg",
+        id: "cajas-acrilico",
+        title: "Cajas acrílico",
+        image: "/Imagenes/CAJAS_ACRILICO_pagina1.png",
+        pdf: "/Imagenes/CAJAS%20ACRILICO.pdf",
+      },
+      {
+        id: "welcome-sign",
+        title: "Welcome sign",
+        image: "/Imagenes/WELCOME_SIGN_pagina1.png",
+        pdf: "/Imagenes/WELCOME%20SIGN.pdf",
+      },
+      {
+        id: "detalles-sociales",
+        title: "Detalles sociales 2025",
+        image: "/Imagenes/DETALLES_SOCIALES_25_pagina1.png",
+        pdf: "/Imagenes/DETALLES%20SOCIALES%2025.pdf",
+      },
+      {
+        id: "catalogo-general",
+        title: "Catálogo general",
+        image: "/Imagenes/CAT%20Agendas.png",
+        pdf: "/Imagenes/catalogo.pdf",
       },
       {
         id: "plumas",
@@ -769,26 +788,9 @@ export const siteConfig = {
         pdf: "/Imagenes/CAT%20vinos.pdf",
       },
       {
-        id: "catalogo-general",
-        title: "Catálogo general",
-        image: "/Imagenes/CAT%20Agendas.png",
-        pdf: "/Imagenes/catalogo.pdf",
-      },
-      {
-        id: "cajas-acrilico",
-        title: "Cajas acrílico",
-        image: "/Imagenes/CAJAS_ACRILICO_pagina1.png",
-      },
-      {
-        id: "detalles-sociales",
-        title: "Detalles sociales 2025",
-        image: "/Imagenes/DETALLES_SOCIALES_25_pagina1.png",
-      },
-      {
-        id: "welcome-sign",
-        title: "Welcome sign",
-        image: "/Imagenes/WELCOME_SIGN_pagina1.png",
-        pdf: "/Imagenes/WELCOME%20SIGN.pdf",
+        id: "termos",
+        title: "Termos personalizados",
+        image: "/Imagenes/CAT%20Termos.jpeg",
       },
     ],
     /** Subsecciones con varias imágenes bajo un mismo título. */
