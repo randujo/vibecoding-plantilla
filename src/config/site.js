@@ -921,7 +921,7 @@ export const siteConfig = {
     links: [
       { label: "Inicio", href: "/#hero" },
       { label: "Productos por técnica", href: "/#features" },
-      { label: "Nuestros productos", href: "/#pricing" },
+      { label: "Nuestras líneas de producto", href: "/#pricing" },
       { label: "Ver nuestro trabajo", href: "/galeria", galleryNav: true },
       { label: "Catálogos", href: "/catalogos" },
       { label: "Contacto", href: "/#contact" },
@@ -1368,7 +1368,7 @@ export const siteConfig = {
           { label: "Inicio", href: "/#hero" },
           { label: "Servicios", href: "/#features" },
           { label: "Ver nuestro trabajo", href: "/galeria" },
-          { label: "Nuestros productos", href: "/#pricing" },
+          { label: "Nuestras líneas de producto", href: "/#pricing" },
           { label: "Catálogos", href: "/catalogos" },
           { label: "Contacto", href: "/#contact" },
         ],
