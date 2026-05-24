@@ -72,7 +72,7 @@ export const siteConfig = {
     eyebrow: "Confianza y valor",
     backHomeLabel: "Volver al inicio",
     logo: "/Imagenes/ARDITEC%20logo%20principal.jpeg",
-    ctaLabel: "Hablemos de tu proyecto",
+    ctaLabel: "Cotiza tu proyecto",
     ctaHref: "/#contact",
   },
 
