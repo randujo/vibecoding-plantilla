@@ -471,6 +471,8 @@ export const siteConfig = {
     heading: "Productos por técnica",
     subheading:
       "Un sólo lugar, la técnica correcta. Asesoramos y ejecutamos según tu proyecto, material y objetivo.",
+    /** Texto del enlace al inicio de la sección en el menú desplegable del header. */
+    navAllLabel: "Ver todas las técnicas",
     /** Texto del enlace a la galería por técnica (`/galeria#` + gallerySectionId de cada ítem). */
     galleryLinkLabel: "Ver nuestro trabajo",
     items: [
@@ -744,6 +746,10 @@ export const siteConfig = {
     heading: "Explora nuestros catálogos",
     /** Texto debajo del título en /catalogos (vista ampliada al hacer clic). */
     thumbnailHint: "Pulsa cada imagen o catálogo PDF para verlo en grande.",
+    /** Texto del enlace al inicio de catálogos en el menú desplegable. */
+    navAllLabel: "Ver todos los catálogos",
+    /** Etiqueta para ir a la sección completa de un grupo (p. ej. Tarjetas metálicas). */
+    navSectionLabel: "Todo",
     items: [
       {
         id: "cajas-acrilico",
@@ -920,10 +926,10 @@ export const siteConfig = {
   nav: {
     links: [
       { label: "Inicio", href: "/#hero" },
-      { label: "Productos por técnica", href: "/#features" },
+      { label: "Productos por técnica", href: "/#features", featuresNav: true },
       { label: "Nuestras líneas de producto", href: "/#pricing" },
       { label: "Ver nuestro trabajo", href: "/galeria", galleryNav: true },
-      { label: "Catálogos", href: "/catalogos" },
+      { label: "Catálogos", href: "/catalogos", catalogNav: true },
       { label: "Contacto", href: "/#contact" },
     ],
   },
@@ -937,16 +943,16 @@ export const siteConfig = {
         href: "/galeria",
         keywords: ["galería", "galeria", "fotos", "imágenes", "portfolio", "portafolio", "trabajos", "ejemplos", "trabajo"],
       },
-      { label: "Grabado y corte láser", href: "/#features", keywords: ["láser", "laser", "grabado", "corte", "acrílico", "acrilico", "pizarrones", "plumas", "llaveros"] },
-      { label: "Sublimado", href: "/#features", keywords: ["sublimado", "tazas", "placas", "imanes"] },
+      { label: "Grabado y corte láser", href: "/#galeria-grabado-laser", keywords: ["láser", "laser", "grabado", "corte", "acrílico", "acrilico", "pizarrones", "plumas", "llaveros"] },
+      { label: "Sublimado", href: "/#galeria-sublimado", keywords: ["sublimado", "tazas", "placas", "imanes"] },
       {
         label: "Vinil Textil",
-        href: "/#features",
+        href: "/#galeria-vinil-textil",
         keywords: ["vinil", "vinil textil", "textil", "playeras", "maletas", "uniformes", "logo"],
       },
       {
         label: "Vinil de Corte",
-        href: "/#features",
+        href: "/#galeria-vinil-corte",
         keywords: [
           "vinil de corte",
           "calcomanía",
@@ -965,12 +971,12 @@ export const siteConfig = {
       },
       {
         label: "DTF (Direct to Film)",
-        href: "/#features",
+        href: "/#galeria-dtf",
         keywords: ["dtf", "direct to film", "transferencia", "digital", "degradados", "gorras"],
       },
       {
         label: "Foil",
-        href: "/#features",
+        href: "/#galeria-foil",
         keywords: [
           "foil",
           "metalizado",

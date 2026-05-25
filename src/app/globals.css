@@ -4,6 +4,21 @@
   --font-sans: var(--font-geist-sans);
 }
 
+/* Menú principal: DM Sans, compacto y legible en pantallas estrechas. */
+.nav-link-text {
+  font-family: var(--font-nav), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  line-height: 1.2;
+}
+
+@media (min-width: 1280px) {
+  .nav-link-text {
+    font-size: 0.875rem;
+  }
+}
+
 :root {
   --color-bg: #ffffff;
   --color-surface: #f1f5f9;

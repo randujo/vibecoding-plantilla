@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { catalogAnchorId } from "@/components/catalogAnchors";
 import { siteConfig } from "@/config/site";
+
+const catalogScrollMt = "scroll-mt-28 md:scroll-mt-32 lg:scroll-mt-36";
 
 function CatalogCard({ item, labelPrefix, onZoom }) {
   const label = labelPrefix ? `${labelPrefix}: ${item.title}` : `Catálogo: ${item.title}`;
@@ -84,23 +87,30 @@ export default function CatalogSection() {
 
           <div className="grid gap-6 sm:grid-cols-2">
             {items.map((item) => (
-              <CatalogCard key={item.id} item={item} onZoom={setZoom} />
+              <div key={item.id} id={catalogAnchorId(item.id)} className={catalogScrollMt}>
+                <CatalogCard item={item} onZoom={setZoom} />
+              </div>
             ))}
           </div>
 
           {groups.map((group) => (
-            <div key={group.id} className="mt-16 border-t border-[#dbe4ef] pt-14">
+            <div
+              key={group.id}
+              id={catalogAnchorId(group.id)}
+              className={`mt-16 border-t border-[#dbe4ef] pt-14 ${catalogScrollMt}`}
+            >
               <h3 className="title-main-duotone mb-8 text-center text-2xl font-bold tracking-tight md:text-3xl">
                 {group.title}
               </h3>
               <div className="grid gap-6 sm:grid-cols-2">
                 {group.items.map((item) => (
-                  <CatalogCard
-                    key={item.id}
-                    item={item}
-                    labelPrefix={group.title}
-                    onZoom={setZoom}
-                  />
+                  <div key={item.id} id={catalogAnchorId(item.id)} className={catalogScrollMt}>
+                    <CatalogCard
+                      item={item}
+                      labelPrefix={group.title}
+                      onZoom={setZoom}
+                    />
+                  </div>
                 ))}
               </div>
             </div>

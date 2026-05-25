@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { featureAnchorId } from "@/components/featureAnchors";
 import { siteConfig } from "@/config/site";
+
+const featureScrollMt = "scroll-mt-28 md:scroll-mt-32 lg:scroll-mt-36";
 
 const iconMap = {
   lightning: (
@@ -63,7 +66,8 @@ export default function Features() {
               return (
                 <div
                   key={feature.title ?? index}
-                  className="bg-[color:var(--color-bg)] p-8 rounded-2xl border border-[color:var(--color-surface-strong)] shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                  id={feature.gallerySectionId ? featureAnchorId(feature.gallerySectionId) : undefined}
+                  className={`bg-[color:var(--color-bg)] p-8 rounded-2xl border border-[color:var(--color-surface-strong)] shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all ${feature.gallerySectionId ? featureScrollMt : ""}`}
                 >
                   {feature.image ? (
                     <div className="mb-5 overflow-hidden rounded-xl border border-[color:var(--color-surface-strong)] bg-[color:var(--color-surface)]">
