@@ -630,8 +630,6 @@ export const siteConfig = {
         period: " y uniformes",
         description: "Para equipos y eventos",
         features: [
-          "Vinil textil",
-          "DTF",
           "Maletas y textiles",
           "Sudaderas",
         ],
