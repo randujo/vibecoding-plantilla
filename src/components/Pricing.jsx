@@ -15,18 +15,18 @@ export default function Pricing() {
             {subheading}
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
+        <div className="flex flex-wrap justify-center gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`flex h-full flex-col rounded-2xl p-8 border ${
+              className={`flex w-full max-w-[24rem] flex-col rounded-2xl border p-8 sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] ${
                 plan.highlighted
                   ? "border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white shadow-xl"
                   : "border-[color:var(--color-surface-strong)] bg-[color:var(--color-bg)] shadow-sm"
               }`}
             >
               <h3
-                className={`text-lg font-semibold mb-1 ${
+                className={`mb-1 text-lg font-semibold leading-tight break-words ${
                   plan.highlighted ? "text-slate-100" : "text-[color:var(--color-text)]"
                 }`}
               >
@@ -40,9 +40,15 @@ export default function Pricing() {
                 {plan.description}
               </p>
               <div className="mb-6">
-                <span className="text-4xl font-bold">{plan.price}</span>
                 <span
-                  className={`text-sm ${
+                  className={`block font-bold leading-tight break-words ${
+                    plan.price.length > 14 ? "text-3xl md:text-[2rem]" : "text-4xl"
+                  }`}
+                >
+                  {plan.price}
+                </span>
+                <span
+                  className={`mt-1 block text-sm ${
                     plan.highlighted ? "text-slate-300" : "text-[color:var(--color-text-muted)]"
                   }`}
                 >

@@ -289,7 +289,7 @@ export const siteConfig = {
             ],
           },
           {
-            title: "Letreros",
+            title: "Letreros sociales",
             images: [
               {
                 src: "/Imagenes/Letrero.jpeg",
@@ -299,6 +299,15 @@ export const siteConfig = {
                 src: "/Imagenes/Letrero%20Gaby.jpeg",
                 alt: "Letrero de bienvenida en acrílico oro con tipografía y monograma para evento",
               },
+              {
+                src: "/Imagenes/numeromesa.png",
+                alt: "Letrero de numeración de mesa cortado y grabado",
+              },
+            ],
+          },
+          {
+            title: "Letreros comerciales",
+            images: [
               {
                 src: "/Imagenes/Letrero%20Dra.jpeg",
                 alt: "Letrero para consultorio con nombre en acabado tipo metálico",
@@ -314,10 +323,6 @@ export const siteConfig = {
               {
                 src: "/Imagenes/MEVAK.png",
                 alt: "Letrero o pieza de señalética grabada con marca MEVAK",
-              },
-              {
-                src: "/Imagenes/numeromesa.png",
-                alt: "Letrero de numeración de mesa cortado y grabado",
               },
             ],
           },
@@ -602,8 +607,8 @@ export const siteConfig = {
         description: "Identidad y regalo corporativo",
         features: [
           "Termos personalizados",
-          "Plumas y llaveros",
-          "Imanes promocionales",
+          "Plumas",
+          "Llaveros",
           "Tazas para marca o evento",
         ],
         cta: "Ver imágenes",
@@ -619,6 +624,8 @@ export const siteConfig = {
           "Letreros de acrílico",
           "Rotulado de ventanas",
           "Rotulado de vehículos",
+          "Imanes promocionales",
+          "Microperforado",
         ],
         cta: "Ver imágenes",
         ctaHref: "/imagenes/linea-comercial",
@@ -632,6 +639,8 @@ export const siteConfig = {
         features: [
           "Maletas y textiles",
           "Sudaderas",
+          "Locheras",
+          "Hieleras",
         ],
         cta: "Ver imágenes",
         ctaHref: "/imagenes/linea-textil",
@@ -644,14 +653,27 @@ export const siteConfig = {
         description: "Para bodas, cumpleaños y celebraciones",
         features: [
           "Cajas de acrílico",
-          "Reconocimientos",
           "Cake topper",
-          "Letreros",
+          "Letreros de bienvenida",
           "Vasos",
         ],
         cta: "Ver imágenes",
         ctaHref: "/imagenes/eventos-sociales",
         highlighted: true,
+      },
+      {
+        name: "Reconocimientos y premiaciones",
+        price: "Reconocimientos",
+        period: " institucionales",
+        description: "Para escuelas, empresas, torneos e instituciones",
+        features: [
+          "Reconocimientos en acrílico",
+          "Premiaciones personalizadas",
+          "Galardones institucionales",
+        ],
+        cta: "Ver imágenes",
+        ctaHref: "/imagenes/reconocimientos-y-premiaciones",
+        highlighted: false,
       },
     ],
   },
@@ -688,9 +710,9 @@ export const siteConfig = {
       {
         id: "linea-comercial",
         name: "Línea Comercial",
-        description: "Letreros, rotulado de ventanas y señalética para dar visibilidad a tu negocio.",
+        description: "Letreros, rotulado, microperforado e imanes promocionales para dar visibilidad a tu negocio.",
         picks: [
-          { sectionId: "galeria-grabado-laser", groupTitle: "Letreros" },
+          { sectionId: "galeria-grabado-laser", groupTitle: "Letreros comerciales" },
           {
             sectionId: "galeria-vinil-corte",
             displayTitle: "Rotulado comercial",
@@ -705,9 +727,9 @@ export const siteConfig = {
       {
         id: "linea-textil",
         name: "Línea Textil",
-        description: "Playeras, uniformes, maletas y sudaderas con vinil textil y DTF.",
+        description: "Playeras, uniformes, maletas, locheras, hieleras y sudaderas con vinil textil y DTF.",
         picks: [
-          { sectionId: "galeria-vinil-textil", displayTitle: "Vinil textil y maletas" },
+          { sectionId: "galeria-vinil-textil", displayTitle: "Vinil textil, maletas, locheras y hieleras" },
           { sectionId: "galeria-dtf", displayTitle: "DTF" },
         ],
       },
@@ -717,15 +739,24 @@ export const siteConfig = {
         description: "Detalles personalizados para bodas, cumpleaños y celebraciones.",
         picks: [
           { sectionId: "galeria-grabado-laser", groupTitle: "Cajas de acrílico" },
-          { sectionId: "galeria-grabado-laser", groupTitle: "Reconocimientos" },
           { sectionId: "galeria-grabado-laser", groupTitle: "Cake topper" },
-          { sectionId: "galeria-grabado-laser", groupTitle: "Letreros" },
+          {
+            sectionId: "galeria-grabado-laser",
+            groupTitle: "Letreros sociales",
+            displayTitle: "Letreros de bienvenida",
+          },
           {
             sectionId: "galeria-vinil-corte",
             displayTitle: "Vasos",
             imageSrcs: ["/Imagenes/Vasos%20Gaby.jpeg", "/Imagenes/Vinil%20vasos.jpg"],
           },
         ],
+      },
+      {
+        id: "reconocimientos-y-premiaciones",
+        name: "Reconocimientos y premiaciones",
+        description: "Reconocimientos personalizados para escuelas, empresas, torneos e instituciones.",
+        picks: [{ sectionId: "galeria-grabado-laser", groupTitle: "Reconocimientos" }],
       },
     ],
   },
@@ -987,9 +1018,9 @@ export const siteConfig = {
           "acabados",
         ],
       },
-      { label: "Línea Promocional", href: "/#pricing", keywords: ["termos", "plumas", "llaveros", "imanes", "tazas"] },
-      { label: "Línea Comercial", href: "/#pricing", keywords: ["rotulado", "ventanas", "vehículos", "vehiculos", "letreros"] },
-      { label: "Línea Textil", href: "/#pricing", keywords: ["playeras", "uniformes", "textil", "dtf", "sudaderas"] },
+      { label: "Línea Promocional", href: "/#pricing", keywords: ["termos", "plumas", "llaveros", "tazas"] },
+      { label: "Línea Comercial", href: "/#pricing", keywords: ["rotulado", "ventanas", "vehículos", "vehiculos", "letreros", "imanes", "microperforado"] },
+      { label: "Línea Textil", href: "/#pricing", keywords: ["playeras", "uniformes", "textil", "dtf", "sudaderas", "locheras", "hieleras"] },
       {
         label: "Eventos sociales",
         href: "/#pricing",
@@ -1000,10 +1031,23 @@ export const siteConfig = {
           "cumpleanos",
           "cajas acrílico",
           "cajas acrilico",
-          "reconocimientos",
           "cake topper",
           "letreros",
+          "letreros de bienvenida",
           "vasos",
+        ],
+      },
+      {
+        label: "Reconocimientos y premiaciones",
+        href: "/#pricing",
+        keywords: [
+          "reconocimientos",
+          "premiaciones",
+          "galardones",
+          "institucionales",
+          "escuelas",
+          "empresas",
+          "torneos",
         ],
       },
       { label: "Contacto", href: "/#contact", keywords: ["cotización", "cotizacion", "contacto", "mensaje", "asesoría", "asesoria"] },
