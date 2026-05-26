@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { catalogAnchorId } from "@/components/catalogAnchors";
 import { featureAnchorId } from "@/components/featureAnchors";
 import { gallerySubgroupAnchorId } from "@/components/galleryAnchors";
+import { pricingAnchorId } from "@/components/pricingAnchors";
 import { siteConfig } from "@/config/site";
 
 /**
@@ -181,6 +182,29 @@ function CatalogNavPanel({ catalogBaseHref, onNavigate, itemLinkClassName, subLi
             </ul>
           </div>
         </details>
+      ))}
+    </div>
+  );
+}
+
+function ProductLinesNavPanel({ onNavigate, itemLinkClassName }) {
+  const plans = siteConfig.pricing?.plans ?? [];
+
+  return (
+    <div className="flex flex-col gap-0">
+      {plans.map((plan) => (
+        <div
+          key={plan.id}
+          className="border-b border-[color:var(--color-surface-strong)]/80 last:border-b-0"
+        >
+          <a
+            href={`/#${pricingAnchorId(plan.id)}`}
+            className={itemLinkClassName}
+            onClick={onNavigate}
+          >
+            {plan.name}
+          </a>
+        </div>
       ))}
     </div>
   );
@@ -406,13 +430,16 @@ export default function Header() {
   const [galleryDropdownOpen, setGalleryDropdownOpen] = useState(false);
   const [catalogDropdownOpen, setCatalogDropdownOpen] = useState(false);
   const [featuresDropdownOpen, setFeaturesDropdownOpen] = useState(false);
+  const [pricingDropdownOpen, setPricingDropdownOpen] = useState(false);
   const galleryNavRef = useRef(null);
   const catalogNavRef = useRef(null);
   const featuresNavRef = useRef(null);
+  const pricingNavRef = useRef(null);
   const { links } = siteConfig.nav;
   const { search } = siteConfig;
   const catalogNavAllLabel = siteConfig.catalog?.navAllLabel ?? "Ver todos los catálogos";
   const featuresNavAllLabel = siteConfig.features?.navAllLabel ?? "Ver todas las técnicas";
+  const pricingNavAllLabel = siteConfig.pricing?.navAllLabel ?? "Ver todas las líneas";
 
   const allSearchItems = useMemo(() => buildExtendedSearchCatalog(siteConfig), []);
 
@@ -442,6 +469,15 @@ export default function Header() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [featuresDropdownOpen]);
+
+  useEffect(() => {
+    if (!pricingDropdownOpen) return undefined;
+    const onKey = (e) => {
+      if (e.key === "Escape") setPricingDropdownOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [pricingDropdownOpen]);
 
   useEffect(() => {
     if (!galleryDropdownOpen) return undefined;
@@ -476,6 +512,17 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", onDown);
   }, [featuresDropdownOpen]);
 
+  useEffect(() => {
+    if (!pricingDropdownOpen) return undefined;
+    const onDown = (e) => {
+      if (pricingNavRef.current && !pricingNavRef.current.contains(e.target)) {
+        setPricingDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, [pricingDropdownOpen]);
+
   const normalizedQuery = normalizeText(query);
   const queryWords = normalizedQuery.split(/\s+/).filter(Boolean);
   const searchResults = normalizedQuery
@@ -492,6 +539,10 @@ export default function Header() {
   function handleResultClick() {
     setMenuOpen(false);
     setQuery("");
+    setGalleryDropdownOpen(false);
+    setCatalogDropdownOpen(false);
+    setFeaturesDropdownOpen(false);
+    setPricingDropdownOpen(false);
   }
 
   const desktopNavLinkClass =
@@ -527,6 +578,7 @@ export default function Header() {
                       onClick={() => {
                         setGalleryDropdownOpen(false);
                         setCatalogDropdownOpen(false);
+                        setPricingDropdownOpen(false);
                         setFeaturesDropdownOpen((open) => !open);
                       }}
                     >
@@ -572,6 +624,66 @@ export default function Header() {
               );
             }
 
+            if (link.pricingNav) {
+              return (
+                <li key={`${link.href}-${link.label}-pricing`} className="relative shrink-0">
+                  <div ref={pricingNavRef} className="relative">
+                    <button
+                      type="button"
+                      id="pricing-nav-trigger"
+                      aria-expanded={pricingDropdownOpen}
+                      aria-haspopup="menu"
+                      aria-controls="pricing-nav-menu"
+                      className={`${desktopNavLinkClass} cursor-pointer gap-1 border border-transparent`}
+                      onClick={() => {
+                        setGalleryDropdownOpen(false);
+                        setCatalogDropdownOpen(false);
+                        setFeaturesDropdownOpen(false);
+                        setPricingDropdownOpen((open) => !open);
+                      }}
+                    >
+                      {link.label}
+                      <svg
+                        className={`size-3.5 shrink-0 opacity-60 transition-transform duration-200 ${pricingDropdownOpen ? "rotate-180" : ""}`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div
+                      id="pricing-nav-menu"
+                      role="menu"
+                      aria-labelledby="pricing-nav-trigger"
+                      hidden={!pricingDropdownOpen}
+                      className={`absolute left-0 top-full z-[60] pt-2 transition-[opacity,visibility] duration-150 ${
+                        pricingDropdownOpen
+                          ? "visible opacity-100"
+                          : "pointer-events-none invisible opacity-0"
+                      }`}
+                    >
+                      <div className="max-h-[min(78vh,32rem)] min-w-[min(19rem,calc(100vw-2rem))] max-w-[26rem] overflow-y-auto overscroll-contain rounded-lg border border-[color:var(--color-surface-strong)] bg-white py-1 shadow-xl ring-1 ring-black/5">
+                        <a
+                          href={link.href}
+                          role="menuitem"
+                          className="block border-b border-[color:var(--color-surface-strong)] px-3 py-2 text-sm font-semibold text-[color:var(--color-accent)] transition-colors hover:bg-slate-50"
+                          onClick={() => setPricingDropdownOpen(false)}
+                        >
+                          {pricingNavAllLabel}
+                        </a>
+                        <ProductLinesNavPanel
+                          onNavigate={() => setPricingDropdownOpen(false)}
+                          itemLinkClassName="block px-3 py-1.5 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-slate-50 hover:text-[color:var(--color-accent)]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              );
+            }
+
             if (link.galleryNav) {
               return (
                 <li key={`${link.href}-${link.label}-gallery`} className="relative shrink-0">
@@ -586,6 +698,7 @@ export default function Header() {
                       onClick={() => {
                         setCatalogDropdownOpen(false);
                         setFeaturesDropdownOpen(false);
+                        setPricingDropdownOpen(false);
                         setGalleryDropdownOpen((open) => !open);
                       }}
                     >
@@ -647,6 +760,7 @@ export default function Header() {
                       onClick={() => {
                         setGalleryDropdownOpen(false);
                         setFeaturesDropdownOpen(false);
+                        setPricingDropdownOpen(false);
                         setCatalogDropdownOpen((open) => !open);
                       }}
                     >
@@ -830,6 +944,42 @@ export default function Header() {
                           {featuresNavAllLabel}
                         </a>
                         <FeaturesNavPanel
+                          onNavigate={() => setMenuOpen(false)}
+                          itemLinkClassName="block rounded-md px-3 py-1.5 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface)] hover:text-[color:var(--color-accent)]"
+                        />
+                      </div>
+                    </details>
+                  </li>
+                );
+              }
+
+              if (link.pricingNav) {
+                return (
+                  <li key={`${link.href}-${link.label}-pricing-mobile`}>
+                    <details className="group rounded-xl border border-transparent open:border-[color:var(--color-surface-strong)] open:bg-[color:var(--color-surface)]/40">
+                      <summary className="nav-link-text cursor-pointer list-none px-3 py-2 text-[color:var(--color-primary)] marker:hidden [&::-webkit-details-marker]:hidden">
+                        <span className="flex items-center justify-between gap-2">
+                          {link.label}
+                          <svg
+                            className="size-4 shrink-0 opacity-60 transition-transform group-open:rotate-180"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <div className="border-t border-[color:var(--color-surface-strong)] px-2 pb-3 pt-2">
+                        <a
+                          href={link.href}
+                          className="mb-2 block rounded-md px-3 py-1.5 text-sm font-semibold text-[color:var(--color-accent)] transition-colors hover:bg-[color:var(--color-surface)]"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {pricingNavAllLabel}
+                        </a>
+                        <ProductLinesNavPanel
                           onNavigate={() => setMenuOpen(false)}
                           itemLinkClassName="block rounded-md px-3 py-1.5 text-sm font-semibold text-[color:var(--color-text)] transition-colors hover:bg-[color:var(--color-surface)] hover:text-[color:var(--color-accent)]"
                         />

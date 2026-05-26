@@ -599,8 +599,10 @@ export const siteConfig = {
     heading: "Nuestras líneas de producto",
     subheading:
       "Elige la categoría que más se parece a tu proyecto y explora ejemplos reales.",
+    navAllLabel: "Ver todas las líneas",
     plans: [
       {
+        id: "linea-promocional",
         name: "Línea Promocional",
         price: "Termos",
         period: " y accesorios",
@@ -616,6 +618,7 @@ export const siteConfig = {
         highlighted: false,
       },
       {
+        id: "linea-comercial",
         name: "Línea Comercial",
         price: "Rotulado",
         period: " e imagen",
@@ -632,6 +635,7 @@ export const siteConfig = {
         highlighted: true,
       },
       {
+        id: "linea-textil",
         name: "Línea Textil",
         price: "Playeras",
         period: " y uniformes",
@@ -647,6 +651,7 @@ export const siteConfig = {
         highlighted: false,
       },
       {
+        id: "eventos-sociales",
         name: "Eventos sociales",
         price: "Detalles",
         period: " personalizados",
@@ -662,6 +667,7 @@ export const siteConfig = {
         highlighted: true,
       },
       {
+        id: "reconocimientos-y-premiaciones",
         name: "Reconocimientos y premiaciones",
         price: "Reconocimientos",
         period: " institucionales",
@@ -827,6 +833,12 @@ export const siteConfig = {
         title: "Termos personalizados",
         image: "/Imagenes/CAT%20Termos.jpeg",
       },
+      {
+        id: "esferas",
+        title: "Esferas",
+        image: "/Imagenes/esferas%20catalogo_compressed.pdf.png",
+        pdf: "/Imagenes/esferas%20catalogo_compressed.pdf",
+      },
     ],
     /** Subsecciones con varias imágenes bajo un mismo título. */
     groups: [
@@ -956,7 +968,7 @@ export const siteConfig = {
     links: [
       { label: "Inicio", href: "/#hero" },
       { label: "Productos por técnica", href: "/#features", featuresNav: true },
-      { label: "Nuestras líneas de producto", href: "/#pricing" },
+      { label: "Nuestras líneas de producto", href: "/#pricing", pricingNav: true },
       { label: "Ver nuestro trabajo", href: "/galeria", galleryNav: true },
       { label: "Catálogos", href: "/catalogos", catalogNav: true },
       { label: "Contacto", href: "/#contact" },

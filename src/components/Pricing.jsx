@@ -1,4 +1,5 @@
 import PaymentButton from "@/components/PaymentButton";
+import { pricingAnchorId } from "@/components/pricingAnchors";
 import { siteConfig } from "@/config/site";
 
 export default function Pricing() {
@@ -18,8 +19,9 @@ export default function Pricing() {
         <div className="flex flex-wrap justify-center gap-8">
           {plans.map((plan, index) => (
             <div
-              key={index}
-              className={`flex w-full max-w-[24rem] flex-col rounded-2xl border p-8 sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] ${
+              key={plan.id ?? index}
+              id={plan.id ? pricingAnchorId(plan.id) : undefined}
+              className={`scroll-mt-28 md:scroll-mt-32 lg:scroll-mt-36 flex w-full max-w-[24rem] flex-col rounded-2xl border p-8 sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] ${
                 plan.highlighted
                   ? "border-[color:var(--color-primary)] bg-[color:var(--color-primary)] text-white shadow-xl"
                   : "border-[color:var(--color-surface-strong)] bg-[color:var(--color-bg)] shadow-sm"
