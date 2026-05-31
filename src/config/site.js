@@ -226,6 +226,15 @@ export const siteConfig = {
             ],
           },
           {
+            title: "Pines",
+            images: [
+              {
+                src: "/Imagenes/Pines.jpeg",
+                alt: "Pines conmemorativos circulares con grabado dorado sobre fondo negro, texto XX aniversario 2005-2025 y Plantel No 10",
+              },
+            ],
+          },
+          {
             title: "Cake topper",
             images: [
               { src: "/Imagenes/cktp.png", alt: "Topper sobre pastel con lettering y elementos cortados a láser" },
@@ -676,6 +685,7 @@ export const siteConfig = {
           "Reconocimientos en acrílico",
           "Premiaciones personalizadas",
           "Galardones institucionales",
+          "Pines",
         ],
         cta: "Ver imágenes",
         ctaHref: "/imagenes/reconocimientos-y-premiaciones",
@@ -762,7 +772,10 @@ export const siteConfig = {
         id: "reconocimientos-y-premiaciones",
         name: "Reconocimientos y premiaciones",
         description: "Reconocimientos personalizados para escuelas, empresas, torneos e instituciones.",
-        picks: [{ sectionId: "galeria-grabado-laser", groupTitle: "Reconocimientos" }],
+        picks: [
+          { sectionId: "galeria-grabado-laser", groupTitle: "Reconocimientos" },
+          { sectionId: "galeria-grabado-laser", groupTitle: "Pines" },
+        ],
       },
     ],
   },
