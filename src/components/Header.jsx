@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { catalogAnchorId } from "@/components/catalogAnchors";
 import { featureAnchorId } from "@/components/featureAnchors";
-import { gallerySubgroupAnchorId } from "@/components/galleryAnchors";
+import { galleryNavGroups, gallerySubgroupAnchorId } from "@/components/galleryAnchors";
 import { pricingAnchorId } from "@/components/pricingAnchors";
 import { siteConfig } from "@/config/site";
 
@@ -26,10 +26,7 @@ function GalleryNavPanel({
   return (
     <div className={rootClassName ?? "flex flex-col gap-0"}>
       {sections.map((section) => {
-        const groups =
-          Array.isArray(section.imageGroups) && section.imageGroups.length > 0
-            ? section.imageGroups.filter((g) => g.images?.length > 0)
-            : [];
+        const groups = galleryNavGroups(section);
         const parentLabel = section.galleryNavParentLabel ?? section.title;
 
         if (groups.length > 0) {
@@ -377,9 +374,7 @@ function buildExtendedSearchCatalog(siteConfig) {
       keywords: [secTitle, navShort, section.title].filter(Boolean),
     });
 
-    const groups = Array.isArray(section.imageGroups)
-      ? section.imageGroups.filter((g) => g.images?.length > 0)
-      : [];
+    const groups = galleryNavGroups(section);
     for (const g of groups) {
       const anchorId = gallerySubgroupAnchorId(section.id, g.title);
       addItem({

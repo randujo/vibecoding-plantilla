@@ -10,3 +10,18 @@ export function gallerySubgroupAnchorId(sectionId, groupTitle) {
     .replace(/^-|-$/g, "");
   return `${sectionId}--${slug}`;
 }
+
+/** Subgrupos visibles en menú y salto rápido de la galería (respeta `galleryNavSubgroups` si existe). */
+export function galleryNavGroups(section) {
+  const groupsRaw = Array.isArray(section.imageGroups)
+    ? section.imageGroups.filter((g) => g.images?.length > 0)
+    : [];
+
+  if (Array.isArray(section.galleryNavSubgroups) && section.galleryNavSubgroups.length > 0) {
+    return section.galleryNavSubgroups
+      .map((title) => groupsRaw.find((g) => g.title === title))
+      .filter(Boolean);
+  }
+
+  return groupsRaw;
+}

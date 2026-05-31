@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer";
-import { gallerySubgroupAnchorId } from "@/components/galleryAnchors";
+import { galleryNavGroups, gallerySubgroupAnchorId } from "@/components/galleryAnchors";
 import GallerySectionsWithLightbox from "@/components/GallerySectionsWithLightbox";
 import Header from "@/components/Header";
 import PageCtaStrip from "@/components/PageCtaStrip";
@@ -73,15 +73,10 @@ export default function GalleryPage() {
                   ))}
                 </div>
 
-                {sections.some((s) =>
-                  Array.isArray(s.imageGroups) ? s.imageGroups.some((g) => g.images?.length > 0) : false,
-                ) ? (
+                {sections.some((s) => galleryNavGroups(s).length > 0) ? (
                   <div className="space-y-4 border-t border-white/15 pt-4">
                     {sections.map((section) => {
-                      const groups =
-                        Array.isArray(section.imageGroups) && section.imageGroups.length > 0
-                          ? section.imageGroups.filter((g) => g.images?.length > 0)
-                          : [];
+                      const groups = galleryNavGroups(section);
                       if (!groups.length) return null;
                       return (
                         <div key={`jump-${section.id}`}>

@@ -140,10 +140,31 @@ export const siteConfig = {
         title: "Grabado y corte láser",
         description:
           "Acrílico, madera, termos, reconocimientos, llaveros y piezas con corte o grabado de alta precisión.",
+        /** Subsecciones visibles en el menú «Ver nuestro trabajo» y en el salto rápido de /galeria. */
+        galleryNavSubgroups: [
+          "Termos",
+          "Tarjetas bancarias metálicas",
+          "Tarjetas de presentación metálicas",
+          "Cajas de acrílico",
+          "Reconocimientos",
+          "Pines",
+          "Cake topper",
+          "Pizarrones",
+          "Plumas",
+          "Esferas",
+          "Llaveros",
+          "Letreros sociales",
+          "Letreros comerciales",
+          "Varios",
+        ],
         imageGroups: [
           {
             title: "Termos",
             images: [
+              {
+                src: "/Imagenes/3%20termos%20mejorado.jpeg",
+                alt: "Tres termos Yeti negros con grabado láser de logotipo Imperio Estrategia Legal y marca Yeti en la base",
+              },
               { src: "/Imagenes/termo%20ae%20fin.jpg", alt: "Termo personalizado con grabado láser sobre recubrimiento" },
               { src: "/Imagenes/termo%201.png", alt: "Termo con diseño grabado a láser" },
               { src: "/Imagenes/termos%203.png", alt: "Variantes de termos con grabado personalizado" },
@@ -164,7 +185,7 @@ export const siteConfig = {
             ],
           },
           {
-            title: "Tarjetas metálicas",
+            title: "Tarjetas bancarias metálicas",
             images: [
               {
                 src: "/Imagenes/bart.jpg",
@@ -194,6 +215,15 @@ export const siteConfig = {
             ],
           },
           {
+            title: "Tarjetas de presentación metálicas",
+            images: [
+              {
+                src: "/Imagenes/Tarjeta%20de%20presntaci%C3%B3n%20mejorada.jpeg",
+                alt: "Tarjeta de presentación metálica negra mate con grabado láser plateado de logotipo Inprel Transformadores",
+              },
+            ],
+          },
+          {
             title: "Cajas de acrílico",
             images: [
               { src: "/Imagenes/caja%201.jpg", alt: "Caja decorativa grabada láser sobre madera o material rígido" },
@@ -212,6 +242,10 @@ export const siteConfig = {
           {
             title: "Reconocimientos",
             images: [
+              {
+                src: "/Imagenes/Reconocimiento%20B10.png",
+                alt: "Reconocimiento en acrílico transparente sobre base verde neón con sello XX aniversario 2005-2025, Osos Plantel 10 y nombre Lic. María Georgina Torres Nájera",
+              },
               {
                 src: "/Imagenes/Reconocimiento.jpeg",
                 alt: "Reconocimiento en acrílico con corte láser en forma de auto clásico, grabado «Best Classic Winner» y base de madera",
@@ -333,6 +367,10 @@ export const siteConfig = {
                 src: "/Imagenes/MEVAK.png",
                 alt: "Letrero o pieza de señalética grabada con marca MEVAK",
               },
+              {
+                src: "/Imagenes/Letrero%20Pollo.jpeg",
+                alt: "Letrero comercial en capas de acrílico con mascota de pollo en relieve, montado con separadores sobre pared negra",
+              },
             ],
           },
           {
@@ -441,6 +479,10 @@ export const siteConfig = {
         description:
           "Tazas y piezas cerámicas o poliéster claras con fotos y colores vivos que quedan integrados al material.",
         images: [
+          {
+            src: "/Imagenes/Reconocimiento%20B10.png",
+            alt: "Reconocimiento en acrílico con impresión a color para XX aniversario Plantel 10 y homenaje a miembro fundador",
+          },
           { src: "/Imagenes/taza%202.jpg", alt: "Par de tazas sublimadas con diseño personalizado" },
           { src: "/Imagenes/taza%203.jpg", alt: "Taza sublimada con ilustración o texto" },
           { src: "/Imagenes/taza%204.jpg", alt: "Taza sublimada a color sobre cerámica blanca" },
@@ -788,7 +830,7 @@ export const siteConfig = {
     metadata: {
       title: "Catálogos | ARDITEC",
       description:
-        "Explora los catálogos de ARDITEC: termos, plumas, tarjetas metálicas, cajas acrílico, welcome sign y más.",
+        "Explora los catálogos de ARDITEC: termos, plumas, tarjetas bancarias metálicas, cajas acrílico, welcome sign y más.",
     },
     badge: "Catálogos",
     heading: "Explora nuestros catálogos",
@@ -796,7 +838,7 @@ export const siteConfig = {
     thumbnailHint: "Pulsa cada imagen o catálogo PDF para verlo en grande.",
     /** Texto del enlace al inicio de catálogos en el menú desplegable. */
     navAllLabel: "Ver todos los catálogos",
-    /** Etiqueta para ir a la sección completa de un grupo (p. ej. Tarjetas metálicas). */
+    /** Etiqueta para ir a la sección completa de un grupo (p. ej. Tarjetas bancarias metálicas). */
     navSectionLabel: "Todo",
     items: [
       {
@@ -857,7 +899,7 @@ export const siteConfig = {
     groups: [
       {
         id: "tarjetas-metalicas",
-        title: "Tarjetas Metálicas",
+        title: "Tarjetas bancarias metálicas",
         items: [
           {
             id: "tarjetas-1",
@@ -997,7 +1039,12 @@ export const siteConfig = {
         href: "/galeria",
         keywords: ["galería", "galeria", "fotos", "imágenes", "portfolio", "portafolio", "trabajos", "ejemplos", "trabajo"],
       },
-      { label: "Grabado y corte láser", href: "/#galeria-grabado-laser", keywords: ["láser", "laser", "grabado", "corte", "acrílico", "acrilico", "pizarrones", "plumas", "llaveros"] },
+      { label: "Grabado y corte láser", href: "/galeria#galeria-grabado-laser", keywords: ["láser", "laser", "grabado", "corte", "acrílico", "acrilico", "pizarrones", "plumas", "llaveros", "pines"] },
+      {
+        label: "Pines · Grabado láser",
+        href: "/galeria#galeria-grabado-laser--pines",
+        keywords: ["pines", "pin", "grabado láser", "grabado laser", "aniversario", "conmemorativo"],
+      },
       { label: "Sublimado", href: "/#galeria-sublimado", keywords: ["sublimado", "tazas", "placas", "imanes"] },
       {
         label: "Vinil Textil",
