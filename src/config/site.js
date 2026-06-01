@@ -144,7 +144,6 @@ export const siteConfig = {
         galleryNavSubgroups: [
           "Termos",
           "Tarjetas bancarias metálicas",
-          "Tarjetas de presentación metálicas",
           "Cajas de acrílico",
           "Reconocimientos",
           "Pines",
@@ -211,15 +210,6 @@ export const siteConfig = {
               {
                 src: "/Imagenes/Tarjeta%20met%C3%A1lica%20As.jpg",
                 alt: "Tarjeta metálica personalizada con grabado láser (As de espadas)",
-              },
-            ],
-          },
-          {
-            title: "Tarjetas de presentación metálicas",
-            images: [
-              {
-                src: "/Imagenes/Tarjeta%20de%20presntaci%C3%B3n%20mejorada.jpeg",
-                alt: "Tarjeta de presentación metálica negra mate con grabado láser plateado de logotipo Inprel Transformadores",
               },
             ],
           },
