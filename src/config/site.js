@@ -285,6 +285,10 @@ export const siteConfig = {
             title: "Plumas",
             images: [
               {
+                src: "/Imagenes/Pluma.png",
+                alt: "Pluma plateada y libreta azul con grabado láser personalizado de nombre e iniciales",
+              },
+              {
                 src: "/Imagenes/Pluma%20Pantalen%202.jpeg",
                 alt: "Pluma negra con acabado plateado y grabado láser vertical: Tte. Cor. M.C. Jaime Jesús Wittman Pantaleón",
               },

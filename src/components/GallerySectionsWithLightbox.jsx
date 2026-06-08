@@ -43,25 +43,53 @@ export default function GallerySectionsWithLightbox({ sections, emptyMessage }) 
 
         const renderImageGrid = (images, keyPrefix) => (
           <ul className="mt-6 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3">
-            {images.map((image) => (
-              <li key={`${section.id}-${keyPrefix}-${image.src}`}>
-                <button
-                  type="button"
-                  onClick={() => setZoom({ src: image.src, alt: image.alt })}
-                  className="group w-full overflow-hidden rounded-2xl border border-[#dbe4ef] bg-white text-left shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2"
-                  aria-label={`Ver imagen grande: ${image.alt}`}
-                >
-                  <div className="aspect-[4/3] overflow-hidden bg-[color:var(--color-surface)]">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                      loading="lazy"
-                    />
-                  </div>
-                </button>
-              </li>
-            ))}
+            {images.map((image) => {
+              const hasPdf = Boolean(image.pdf);
+              const hasSrc = Boolean(image.src);
+              const showPdfPlaceholder = hasPdf && !hasSrc;
+
+              return (
+                <li key={`${section.id}-${keyPrefix}-${image.src ?? image.pdf}`}>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setZoom(
+                        hasPdf
+                          ? { pdf: image.pdf, src: image.src, alt: image.alt }
+                          : { src: image.src, alt: image.alt },
+                      )
+                    }
+                    className="group w-full overflow-hidden rounded-2xl border border-[#dbe4ef] bg-white text-left shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2"
+                    aria-label={
+                      hasPdf ? `Ver catálogo PDF: ${image.alt}` : `Ver imagen grande: ${image.alt}`
+                    }
+                  >
+                    <div className="aspect-[4/3] overflow-hidden bg-[color:var(--color-surface)]">
+                      {showPdfPlaceholder ? (
+                        <div className="flex size-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-[#eef4fb] to-[#dbe4ef] px-6 transition duration-300 group-hover:from-[#e0ecf8] group-hover:to-[#cfd9e8]">
+                          <span
+                            aria-hidden
+                            className="flex size-16 items-center justify-center rounded-2xl bg-[#1f5fae] text-sm font-black uppercase tracking-wider text-white shadow-lg"
+                          >
+                            PDF
+                          </span>
+                          <span className="text-center text-sm font-semibold text-[#1f5fae]">
+                            Ver catálogo
+                          </span>
+                        </div>
+                      ) : (
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="size-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+                  </button>
+                </li>
+              );
+            })}
           </ul>
         );
 
@@ -123,7 +151,17 @@ export default function GallerySectionsWithLightbox({ sections, emptyMessage }) 
             className="flex max-h-full w-full max-w-[min(100vw-2rem,1200px)] flex-col items-stretch gap-3"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex shrink-0 justify-end">
+            <div className="flex shrink-0 justify-end gap-3">
+              {zoom.pdf ? (
+                <a
+                  href={zoom.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-[#4c83cf] px-4 py-2 text-sm font-bold text-white shadow-lg transition hover:bg-[#1f5fae] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                >
+                  Abrir en pestaña nueva
+                </a>
+              ) : null}
               <button
                 type="button"
                 onClick={() => setZoom(null)}
@@ -133,11 +171,19 @@ export default function GallerySectionsWithLightbox({ sections, emptyMessage }) 
                 Cerrar
               </button>
             </div>
-            <img
-              src={zoom.src}
-              alt={zoom.alt}
-              className="max-h-[min(82vh,calc(100vh-9rem))] w-full rounded-xl object-contain object-center shadow-2xl"
-            />
+            {zoom.pdf ? (
+              <iframe
+                title={zoom.alt}
+                src={zoom.pdf}
+                className="h-[min(82vh,calc(100vh-9rem))] w-full rounded-xl border-0 bg-white shadow-2xl"
+              />
+            ) : (
+              <img
+                src={zoom.src}
+                alt={zoom.alt}
+                className="max-h-[min(82vh,calc(100vh-9rem))] w-full rounded-xl object-contain object-center shadow-2xl"
+              />
+            )}
           </div>
         </div>
       ) : null}
