@@ -208,7 +208,7 @@ export const siteConfig = {
                 alt: "Tarjeta metálica negra premium con grabado dorado estilo credencial",
               },
               {
-                src: "/Imagenes/Tarjeta%20met%C3%A1lica%20As.jpg",
+                src: "/Imagenes/Tarjeta-metalica-As.jpg",
                 alt: "Tarjeta metálica personalizada con grabado láser (As de espadas)",
               },
             ],
