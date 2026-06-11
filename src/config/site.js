@@ -216,6 +216,10 @@ export const siteConfig = {
           {
             title: "Cajas de acrílico",
             images: [
+              {
+                src: "/Imagenes/XV%20Luna%20Fernanda.png",
+                alt: "Caja buzón y corazón en acrílico espejo dorado personalizados para XV años de Luna Fernanda",
+              },
               { src: "/Imagenes/caja%201.jpg", alt: "Caja decorativa grabada láser sobre madera o material rígido" },
               { src: "/Imagenes/caja1.jpg", alt: "Caja personalizada con detalle cortado y grabado a láser" },
               { src: "/Imagenes/caja2.jpg", alt: "Caja de presentación en madera con acabados grabados láser" },
@@ -276,6 +280,10 @@ export const siteConfig = {
             title: "Pizarrones",
             images: [
               {
+                src: "/Imagenes/Pizarron-Gaby-mejorado.png",
+                alt: "Tablero de acrílico transparente grabado para planeación mensual con columnas de flujo de trabajo y montajes metálicos",
+              },
+              {
                 src: "/Imagenes/Pizarr%C3%B3n.jpeg",
                 alt: "Pizarrón familiar en acrílico transparente con calendario y secciones grabadas a láser",
               },
@@ -329,6 +337,10 @@ export const siteConfig = {
             title: "Letreros sociales",
             images: [
               {
+                src: "/Imagenes/Letrero%20cielo.png",
+                alt: "Letrero memorial blanco con letras en relieve sobre caballete y mensaje para recordar a seres queridos en eventos",
+              },
+              {
                 src: "/Imagenes/Letrero.jpeg",
                 alt: "Letrero de bienvenida para boda en acrílico negro con nombres en relieve dorado cortado a láser",
               },
@@ -345,6 +357,10 @@ export const siteConfig = {
           {
             title: "Letreros comerciales",
             images: [
+              {
+                src: "/Imagenes/letrero%20dental.jpeg",
+                alt: "Letrero comercial de acrílico negro 3D para clínica SO Dental sobre pared de ladrillo blanco",
+              },
               {
                 src: "/Imagenes/Letrero%20Dra.jpeg",
                 alt: "Letrero para consultorio con nombre en acabado tipo metálico",
@@ -1017,7 +1033,7 @@ export const siteConfig = {
     links: [
       { label: "Inicio", href: "/#hero" },
       { label: "Productos por técnica", href: "/#features", featuresNav: true },
-      { label: "Nuestras líneas de producto", href: "/#pricing", pricingNav: true },
+      { label: "Líneas de producto", href: "/#pricing", pricingNav: true },
       { label: "Ver nuestro trabajo", href: "/galeria", galleryNav: true },
       { label: "Catálogos", href: "/catalogos", catalogNav: true },
       { label: "Contacto", href: "/#contact" },

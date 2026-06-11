@@ -13,6 +13,13 @@
   line-height: 1.2;
 }
 
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .nav-link-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+}
+
 @media (min-width: 1280px) {
   .nav-link-text {
     font-size: 0.875rem;

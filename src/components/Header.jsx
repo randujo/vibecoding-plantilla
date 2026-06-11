@@ -541,14 +541,14 @@ export default function Header() {
   }
 
   const desktopNavLinkClass =
-    "nav-link-text inline-flex shrink-0 whitespace-nowrap items-center text-[color:var(--color-primary)] px-1.5 xl:px-2 py-1.5 rounded-lg hover:bg-[color:var(--color-surface)] hover:text-[#4c83cf] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-bg)]";
+    "nav-link-text inline-flex shrink-0 whitespace-nowrap items-center text-[color:var(--color-primary)] px-1 lg:px-0.5 xl:px-2 py-1.5 rounded-lg hover:bg-[color:var(--color-surface)] hover:text-[#4c83cf] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--color-bg)]";
   const mobileNavLinkClass =
     "nav-link-text block text-[color:var(--color-primary)] px-3 py-2 rounded-lg hover:bg-[color:var(--color-surface)] hover:text-[#4c83cf] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[color:var(--color-bg)]/95 backdrop-blur-md border-b border-[color:var(--color-surface-strong)] shadow-sm">
-      <nav className="max-w-7xl mx-auto pl-3 pr-4 sm:pl-4 sm:pr-5 lg:pl-4 lg:pr-6 min-h-18 py-3 flex items-center gap-2 sm:gap-3 lg:gap-4 min-w-0">
-        <a href="/" className="shrink-0 -ml-1 sm:-ml-2 lg:-ml-2">
+      <nav className="max-w-7xl mx-auto pl-3 pr-4 sm:pl-4 sm:pr-5 lg:pl-4 lg:pr-6 min-h-18 py-3 flex items-center gap-2 sm:gap-3 lg:gap-3 xl:gap-4 min-w-0">
+        <a href="/" className="shrink-0 -ml-2 sm:-ml-2 lg:-ml-3 mr-2 sm:mr-3 lg:mr-4">
           <img
             src="/Imagenes/ARDITEC%20logo%20principal.jpeg"
             alt="Logo ARDITEC"
@@ -557,7 +557,7 @@ export default function Header() {
         </a>
 
         {/* Desktop: overflow-visible para no recortar el submenú; galería abre/cierra con clic */}
-        <ul className="hidden lg:flex flex-1 min-w-0 justify-center items-center gap-0 xl:gap-0.5 overflow-visible px-0.5 sm:px-1">
+        <ul className="hidden lg:flex flex-1 min-w-0 justify-center items-center gap-0 xl:gap-0.5 overflow-visible pl-1 pr-2 xl:pl-2 xl:pr-3">
           {links.map((link) => {
             if (link.featuresNav) {
               return (
@@ -816,9 +816,9 @@ export default function Header() {
                 {/* Búsqueda a la derecha; en tablet (sin menú desktop) ocupa el espacio y alinea la caja a la derecha */}
         <div
           id="busqueda"
-          className="hidden md:flex relative min-w-0 flex-1 justify-end lg:flex-none lg:flex-shrink-0"
+          className="hidden md:flex relative z-20 min-w-0 shrink-0 flex-1 justify-end bg-[color:var(--color-bg)] pl-2 lg:flex-none lg:pl-3 xl:pl-4"
         >
-          <div className="relative w-full max-w-[min(100%,17rem)] sm:max-w-[18.5rem] lg:w-[min(14.75rem,calc(100vw-12rem))] xl:w-[min(16.5rem,calc(100vw-14rem))]">
+          <div className="relative w-full max-w-[min(100%,17rem)] sm:max-w-[18.5rem] lg:w-40 xl:w-[min(16.5rem,calc(100vw-14rem))]">
             <div className="flex items-center gap-1.5 rounded-full border border-[color:var(--color-surface-strong)] bg-[color:var(--color-bg)] px-2.5 py-2 focus-within:border-[color:var(--color-accent)]">
               <svg className="w-3.5 h-3.5 shrink-0 text-[color:var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
