@@ -469,6 +469,10 @@ export const siteConfig = {
             src: "/Imagenes/Mochila%20con%20fondo.jpeg",
             alt: "Mochila personalizada con vinil textil",
           },
+          {
+            src: "/Imagenes/Majalca.png",
+            alt: "Playeras, bolsas y tazas personalizadas con vinil textil Majalca Poly's Bach July 2023",
+          },
         ],
       },
       {
