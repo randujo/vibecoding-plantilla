@@ -181,6 +181,10 @@ export const siteConfig = {
                 src: "/Imagenes/Termo%20vaqueros%20con%20fondo.jpeg",
                 alt: "Termo con diseño grabado de vaqueros con fondo",
               },
+              {
+                src: "/Imagenes/Familiy%20team%20mejorado.png",
+                alt: "Termo negro mate con grabado láser Family Team y nombre César Barrios",
+              },
             ],
           },
           {
@@ -386,6 +390,10 @@ export const siteConfig = {
           {
             title: "Varios",
             images: [
+              {
+                src: "/Imagenes/En%20memoria%20mejorado.png",
+                alt: "Placa conmemorativa en acrílico transparente con texto En memoria y nombres grabados a láser",
+              },
               { src: "/Imagenes/usb.png", alt: "USB y caja de presentación en madera grabada" },
               { src: "/Imagenes/a1.jpg", alt: "Medallón tipo cadena con grabado láser sobre metal" },
               {
@@ -442,6 +450,10 @@ export const siteConfig = {
         description:
           "Textil con nombres, números y logotipos termotransferidos para uniformes y prendas.",
         images: [
+          {
+            src: "/Imagenes/Playera%20U15.jpeg",
+            alt: "Playera negra deportiva con vinil textil: Chihuahua Football U15, La Paz Baja California 2022",
+          },
           { src: "/Imagenes/playera.png", alt: "Playera con diseño en vinil textil" },
           { src: "/Imagenes/Botas%20vinil.jpg", alt: "Botas personalizadas con vinil textil" },
           { src: "/Imagenes/Emi%20vinil%20textil.jpg", alt: "Diseño personalizado en vinil textil (Emi)" },
