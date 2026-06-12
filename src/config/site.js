@@ -445,6 +445,10 @@ export const siteConfig = {
           },
           { src: "/Imagenes/Vinil%20Rosario.jpg", alt: "Vinil de corte aplicado en playeras (Rosario)" },
           { src: "/Imagenes/Vinil%20vasos.jpg", alt: "Vinil de corte aplicado en vasos (vasos personalizados)" },
+          {
+            src: "/Imagenes/Letrero%20GQ.png",
+            alt: "Letrero de oficina en acrílico con vinil de corte negro: LD.MI.CP Gabriela Quezada, Director General",
+          },
         ],
       },
       {
