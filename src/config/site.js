@@ -185,6 +185,10 @@ export const siteConfig = {
                 src: "/Imagenes/Familiy%20team%20mejorado.png",
                 alt: "Termo negro mate con grabado láser Family Team y nombre César Barrios",
               },
+              {
+                src: "/Imagenes/Padrino%20y%20Madrina.png",
+                alt: "Par de termos Yeti negro y rosa con grabado láser Padrino y Madrina, nombre Emma",
+              },
             ],
           },
           {
