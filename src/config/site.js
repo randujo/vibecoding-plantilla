@@ -1614,9 +1614,9 @@ export const siteConfig = {
   // METADATOS SEO (lo que aparece en Google y redes sociales)
   // ─────────────────────────────────────────────
   metadata: {
-    title: "ARDITEC | Productos personalizados en Chihuahua",
+    title: "ARDITEC | Personalización de artículos en Chihuahua",
     description:
-      "ARDITEC crea productos personalizados con grabado láser, sublimación, vinil, vinil textil, DTF, foil e impresión para personas y empresas.",
+      "Personalizamos artículos en Chihuahua con grabado y corte láser, sublimación, DTF, vinil textil, vinil de corte y foil. ARDITEC: soluciones para personas y empresas.",
     icon: "/favicon.png",
   },
 };
