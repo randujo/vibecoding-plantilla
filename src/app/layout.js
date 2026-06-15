@@ -16,6 +16,9 @@ const navFont = DM_Sans({
 export const metadata = {
   title: siteConfig.metadata.title,
   description: siteConfig.metadata.description,
+  icons: {
+    icon: siteConfig.metadata.icon,
+  },
 };
 
 export default function RootLayout({ children }) {

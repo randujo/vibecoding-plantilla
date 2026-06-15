@@ -1617,5 +1617,6 @@ export const siteConfig = {
     title: "ARDITEC | Productos personalizados en Chihuahua",
     description:
       "ARDITEC crea productos personalizados con grabado láser, sublimación, vinil, vinil textil, DTF, foil e impresión para personas y empresas.",
+    icon: "/favicon.png",
   },
 };
