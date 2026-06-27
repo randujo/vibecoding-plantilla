@@ -389,6 +389,10 @@ export const siteConfig = {
                 src: "/Imagenes/Letrero%20Pollo.jpeg",
                 alt: "Letrero comercial en capas de acrílico con mascota de pollo en relieve, montado con separadores sobre pared negra",
               },
+              {
+                src: "/Imagenes/Letrero-centro-psicologico.jpeg",
+                alt: "Letrero exterior del Centro Psicológico DIOF con logotipo de cerebro en manos y teléfono 614-157-50-17",
+              },
             ],
           },
           {
