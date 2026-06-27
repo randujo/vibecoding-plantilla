@@ -17,7 +17,10 @@ export const metadata = {
   title: siteConfig.metadata.title,
   description: siteConfig.metadata.description,
   icons: {
-    icon: siteConfig.metadata.icon,
+    icon: [
+      { url: siteConfig.metadata.icon, sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
