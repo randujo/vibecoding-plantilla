@@ -345,8 +345,8 @@ export const siteConfig = {
             title: "Letreros sociales",
             images: [
               {
-                src: "/Imagenes/Letrero%20cielo.png",
-                alt: "Letrero memorial blanco con letras en relieve sobre caballete y mensaje para recordar a seres queridos en eventos",
+                src: "/Imagenes/cielo%20mejorada.png",
+                alt: "Letrero memorial blanco con letras doradas en relieve, marcos para fotos y mensaje: Sabemos que hoy estarían aquí si el Cielo no estuviera tan Lejos",
               },
               {
                 src: "/Imagenes/Letrero.jpeg",
