@@ -453,6 +453,10 @@ export const siteConfig = {
             src: "/Imagenes/Letrero%20GQ.png",
             alt: "Letrero de oficina en acrílico con vinil de corte negro: LD.MI.CP Gabriela Quezada, Director General",
           },
+          {
+            src: "/Imagenes/Letrero%20piscina%202.jpeg",
+            alt: "Letrero de normas de piscina en acrílico con vinil de corte en español e inglés, iconos de prohibiciones y profundidad 1.50 m",
+          },
         ],
       },
       {
@@ -771,6 +775,22 @@ export const siteConfig = {
         ctaHref: "/imagenes/reconocimientos-y-premiaciones",
         highlighted: false,
       },
+      {
+        id: "senal-etica-seguridad-informativa",
+        name: "Señalética de Seguridad e Informativa",
+        price: "Normas",
+        period: " y señalamientos",
+        description: "Para piscinas, oficinas y espacios públicos",
+        features: [
+          "Normas de piscina",
+          "Señalamientos de seguridad",
+          "Información de emergencia",
+          "Profundidad y restricciones",
+        ],
+        cta: "Ver imágenes",
+        ctaHref: "/imagenes/senal-etica-seguridad-informativa",
+        highlighted: true,
+      },
     ],
   },
 
@@ -855,6 +875,19 @@ export const siteConfig = {
         picks: [
           { sectionId: "galeria-grabado-laser", groupTitle: "Reconocimientos" },
           { sectionId: "galeria-grabado-laser", groupTitle: "Pines" },
+        ],
+      },
+      {
+        id: "senal-etica-seguridad-informativa",
+        name: "Señalética de Seguridad e Informativa",
+        description:
+          "Señalamientos de seguridad e informativos para piscinas, oficinas y espacios que requieren normas claras.",
+        picks: [
+          {
+            sectionId: "galeria-vinil-corte",
+            displayTitle: "Señalética de seguridad e informativa",
+            imageSrcs: ["/Imagenes/Letrero%20piscina%202.jpeg"],
+          },
         ],
       },
     ],
