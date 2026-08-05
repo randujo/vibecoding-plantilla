@@ -393,6 +393,10 @@ export const siteConfig = {
                 src: "/Imagenes/Letrero-centro-psicologico.jpeg",
                 alt: "Letrero exterior del Centro Psicológico DIOF con logotipo de cerebro en manos y teléfono 614-157-50-17",
               },
+              {
+                src: "/Imagenes/Jairos.jpeg",
+                alt: "Letrero comercial JAIROS con letras metálicas 3D montadas en fachada sobre estructura de piedra",
+              },
             ],
           },
           {
