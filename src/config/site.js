@@ -144,6 +144,7 @@ export const siteConfig = {
         galleryNavSubgroups: [
           "Termos",
           "Tarjetas bancarias metálicas",
+          "Tarjetas de presentación metálicas",
           "Cajas de acrílico",
           "Reconocimientos",
           "Pines",
@@ -218,6 +219,15 @@ export const siteConfig = {
               {
                 src: "/Imagenes/Tarjeta-metalica-As.jpg",
                 alt: "Tarjeta metálica personalizada con grabado láser (As de espadas)",
+              },
+            ],
+          },
+          {
+            title: "Tarjetas de presentación metálicas",
+            images: [
+              {
+                src: "/Imagenes/Tarjeta-presentacion-metalica.png",
+                alt: "Tarjeta de presentación metálica negra con grabado láser de logotipo y datos de contacto",
               },
             ],
           },
