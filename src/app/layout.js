@@ -18,6 +18,7 @@ export const metadata = {
   description: siteConfig.metadata.description,
   icons: {
     icon: [
+      { url: siteConfig.metadata.iconIco, sizes: "48x48", type: "image/x-icon" },
       { url: siteConfig.metadata.icon, sizes: "192x192", type: "image/png" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],

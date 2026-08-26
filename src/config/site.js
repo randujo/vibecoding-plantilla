@@ -1669,5 +1669,6 @@ export const siteConfig = {
     description:
       "Personalizamos artículos en Chihuahua con grabado y corte láser, sublimación, DTF, vinil textil, vinil de corte y foil. ARDITEC: soluciones para personas y empresas.",
     icon: "/favicon.png",
+    iconIco: "/favicon.ico",
   },
 };
