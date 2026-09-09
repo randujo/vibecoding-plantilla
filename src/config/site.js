@@ -292,6 +292,14 @@ export const siteConfig = {
                 src: "/Imagenes/Cake%20Tp%20coraz%C3%B3n.jpeg",
                 alt: "Pastel nupcial con topper y corazones en acrílico dorado cortado y grabado a láser",
               },
+              {
+                src: "/Imagenes/Cake%20Topper%20Anyelick.png",
+                alt: "Pastel de dos pisos azul con topper de corona plateada, estrellas y nombre Anyelick en acrílico",
+              },
+              {
+                src: "/Imagenes/Cake%20Topper%20Nuestra%20Boda.png",
+                alt: "Pastel nupcial rústico con topper dorado Nuestra Boda, iniciales A y C, flores y detalles western",
+              },
             ],
           },
           {
