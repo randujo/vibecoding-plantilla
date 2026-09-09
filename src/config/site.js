@@ -936,7 +936,7 @@ export const siteConfig = {
     badge: "Catálogos",
     heading: "Explora nuestros catálogos",
     /** Texto debajo del título en /catalogos (vista ampliada al hacer clic). */
-    thumbnailHint: "Pulsa cada imagen o catálogo PDF para verlo en grande.",
+    thumbnailHint: "Pulsa cada catálogo para abrirlo. Las imágenes se amplían al tocarlas.",
     /** Texto del enlace al inicio de catálogos en el menú desplegable. */
     navAllLabel: "Ver todos los catálogos",
     /** Etiqueta para ir a la sección completa de un grupo (p. ej. Tarjetas bancarias metálicas). */

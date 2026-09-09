@@ -12,34 +12,49 @@ function CatalogCard({ item, labelPrefix, onZoom }) {
   const hasImage = Boolean(item.image);
   const showPdfPlaceholder = hasPdf && !hasImage;
 
+  const media = showPdfPlaceholder ? (
+    <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 bg-gradient-to-br from-[#eef4fb] to-[#dbe4ef] px-6 transition duration-300 group-hover:from-[#e0ecf8] group-hover:to-[#cfd9e8]">
+      <span
+        aria-hidden
+        className="flex size-16 items-center justify-center rounded-2xl bg-[#1f5fae] text-sm font-black uppercase tracking-wider text-white shadow-lg"
+      >
+        PDF
+      </span>
+      <span className="text-center text-sm font-semibold text-[#1f5fae]">Ver catálogo</span>
+    </div>
+  ) : (
+    <img
+      src={item.image}
+      alt={label}
+      className="h-auto w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+    />
+  );
+
+  const triggerClassName =
+    "group block w-full overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2";
+
   return (
     <article className="overflow-hidden rounded-2xl border border-[color:var(--color-surface-strong)] bg-white shadow-sm transition hover:shadow-md">
-      <button
-        type="button"
-        onClick={() =>
-          onZoom(hasPdf ? { pdf: item.pdf, alt: label } : { src: item.image, alt: label })
-        }
-        className="group block w-full overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-accent)] focus-visible:ring-offset-2"
-        aria-label={hasPdf ? `Ver catálogo PDF: ${item.title}` : `Ver imagen grande: ${item.title}`}
-      >
-        {showPdfPlaceholder ? (
-          <div className="flex aspect-[4/3] flex-col items-center justify-center gap-3 bg-gradient-to-br from-[#eef4fb] to-[#dbe4ef] px-6 transition duration-300 group-hover:from-[#e0ecf8] group-hover:to-[#cfd9e8]">
-            <span
-              aria-hidden
-              className="flex size-16 items-center justify-center rounded-2xl bg-[#1f5fae] text-sm font-black uppercase tracking-wider text-white shadow-lg"
-            >
-              PDF
-            </span>
-            <span className="text-center text-sm font-semibold text-[#1f5fae]">Ver catálogo</span>
-          </div>
-        ) : (
-          <img
-            src={item.image}
-            alt={label}
-            className="h-auto w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-          />
-        )}
-      </button>
+      {hasPdf ? (
+        <a
+          href={item.pdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={triggerClassName}
+          aria-label={`Abrir catálogo PDF: ${item.title}`}
+        >
+          {media}
+        </a>
+      ) : (
+        <button
+          type="button"
+          onClick={() => onZoom({ src: item.image, alt: label })}
+          className={triggerClassName}
+          aria-label={`Ver imagen grande: ${item.title}`}
+        >
+          {media}
+        </button>
+      )}
       <div className="px-5 py-4">
         <h3 className="text-lg font-semibold text-[color:var(--color-text)] md:text-xl">{item.title}</h3>
       </div>
@@ -132,16 +147,6 @@ export default function CatalogSection() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex shrink-0 justify-end gap-3">
-              {zoom.pdf ? (
-                <a
-                  href={zoom.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-[#4c83cf] px-4 py-2 text-sm font-bold text-white shadow-lg transition hover:bg-[#1f5fae] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-                >
-                  Abrir en pestaña nueva
-                </a>
-              ) : null}
               <button
                 type="button"
                 onClick={() => setZoom(null)}
@@ -151,19 +156,11 @@ export default function CatalogSection() {
                 Cerrar
               </button>
             </div>
-            {zoom.pdf ? (
-              <iframe
-                title={zoom.alt}
-                src={zoom.pdf}
-                className="h-[min(82vh,calc(100vh-9rem))] w-full rounded-xl border-0 bg-white shadow-2xl"
-              />
-            ) : (
-              <img
-                src={zoom.src}
-                alt={zoom.alt}
-                className="max-h-[min(82vh,calc(100vh-9rem))] w-full rounded-xl object-contain object-center shadow-2xl"
-              />
-            )}
+            <img
+              src={zoom.src}
+              alt={zoom.alt}
+              className="max-h-[min(82vh,calc(100vh-9rem))] w-full rounded-xl object-contain object-center shadow-2xl"
+            />
           </div>
         </div>
       ) : null}
