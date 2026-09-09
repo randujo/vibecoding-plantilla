@@ -407,6 +407,10 @@ export const siteConfig = {
                 src: "/Imagenes/Jairos.jpeg",
                 alt: "Letrero comercial JAIROS con letras metálicas 3D montadas en fachada sobre estructura de piedra",
               },
+              {
+                src: "/Imagenes/Letrero%20Libelula%20Spa.png",
+                alt: "Letrero comercial exterior Libélula Spa & Beauty en letras negras sobre fachada blanca",
+              },
             ],
           },
           {
@@ -470,6 +474,10 @@ export const siteConfig = {
           {
             src: "/Imagenes/Letrero%20piscina%202.jpeg",
             alt: "Letrero de normas de piscina en acrílico con vinil de corte en español e inglés, iconos de prohibiciones y profundidad 1.50 m",
+          },
+          {
+            src: "/Imagenes/Espejo%20Ale%20Villarreal.png",
+            alt: "Espejo irregular con frase y usuario de Instagram aplicados en vinil de corte blanco",
           },
         ],
       },
