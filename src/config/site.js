@@ -226,8 +226,16 @@ export const siteConfig = {
             title: "Tarjetas de presentación metálicas",
             images: [
               {
-                src: "/Imagenes/Tarjeta-presentacion-metalica.png",
-                alt: "Tarjeta de presentación metálica negra con grabado láser de logotipo y datos de contacto",
+                src: "/Imagenes/Tarjeta%20Arditec.png",
+                alt: "Tarjetas de presentación metálicas negras ARDITEC con logo, QR, redes sociales y teléfono",
+              },
+              {
+                src: "/Imagenes/Tarjeta%20Jonadat%20Castillo.png",
+                alt: "Tarjetas metálicas negras Jonadat Castillo Construcción y Remodelación con logo JA y datos de contacto",
+              },
+              {
+                src: "/Imagenes/Tarjeta%20Gaby%20CIE.png",
+                alt: "Tarjeta metálica negra CIE Consultoría Integral de Empresas con logo GQ plateado",
               },
             ],
           },
