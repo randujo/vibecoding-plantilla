@@ -14,12 +14,16 @@ const navFont = DM_Sans({
 });
 
 export const metadata = {
+  // URL canónica: Google resuelve mejor los íconos con ruta absoluta
+  metadataBase: new URL("https://www.arditec.mx"),
   title: siteConfig.metadata.title,
   description: siteConfig.metadata.description,
   icons: {
+    // PNG primero (formato que Google suele tomar mejor que el .ico)
     icon: [
-      { url: siteConfig.metadata.iconIco, sizes: "48x48", type: "image/x-icon" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
       { url: siteConfig.metadata.icon, sizes: "192x192", type: "image/png" },
+      { url: siteConfig.metadata.iconIco, sizes: "any" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
